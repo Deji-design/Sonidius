@@ -24,6 +24,8 @@ Western music.
 Let's begin!
 """)
 
+while True:
+
     answer = input("""
 How many major key signatures do you think
 exist in Western music?
@@ -37,14 +39,22 @@ Write your choice: """).strip().upper()
 
     if answer == "A":
         print("Impressive try, but there are 15 major key signatures.")
+        break
+
     elif answer == "B":
         print("Close, but the answer is 15.")
+        break
+
     elif answer == "C":
         print("Almost there, but the answer is 15.")
+        break
+
     elif answer == "D":
         print("Congratulations! You are correct. There are 15 major key signatures.")
+        break
+
     else:
-        print("Kindly input a letter from A to D.")
+        print("Invalid answer. Kindly input A, B, C, or D.")
 
     input("\nPress Enter to begin the lesson...")
 
