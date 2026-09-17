@@ -24,9 +24,9 @@ Western music.
 Let's begin!
 """)
 
-while True:
+    while True:
 
-    answer = input("""
+        answer = input("""
 How many major key signatures do you think
 exist in Western music?
 
