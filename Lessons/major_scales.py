@@ -1,3 +1,64 @@
+import random
+
+
+# ==========================================
+# FUNCTION FOR ASKING QUESTIONS
+# ==========================================
+
+def ask_question(q, question_number):
+
+    print(f"\nQuestion {question_number}: {q['question']}")
+
+    # Convert the options dictionary into a list
+    # so that the options can be shuffled
+    options = list(q["options"].items())
+
+    # Shuffle the options
+    random.shuffle(options)
+
+    # Letters that will be displayed
+    letters = ["A", "B", "C", "D"]
+
+    # This will store the new correct answer
+    new_correct_answer = ""
+
+    # Display the shuffled options
+    for i in range(len(options)):
+
+        old_letter = options[i][0]
+        option_text = options[i][1]
+
+        print(f"{letters[i]}. {option_text}")
+
+        # Check whether this option was originally
+        # the correct answer
+        if old_letter == q["answer"]:
+            new_correct_answer = letters[i]
+
+    # Keep asking until the user enters A, B, C, or D
+    while True:
+
+        user_answer = input("\nYour answer: ").strip().upper()
+
+        if user_answer in ["A", "B", "C", "D"]:
+
+            if user_answer == new_correct_answer:
+                print("Correct!")
+                return True
+
+            else:
+                print(f"Incorrect. The correct answer is {new_correct_answer}.")
+                return False
+
+        else:
+
+            print("Invalid answer. Kindly input A, B, C, or D.")
+
+
+# ==========================================
+# MAJOR SCALES LESSON
+# ==========================================
+
 def major_scales():
 
     # ==========================================
@@ -59,7 +120,6 @@ Write your choice: """).strip().upper()
     input("\nPress Enter to begin the lesson...")
 
 
-
     # ==========================================
     # SECTION 1: TONES AND SEMITONES
     # ==========================================
@@ -99,17 +159,21 @@ The major scale pattern is:
 T - T - S - T - T - T - S
 """)
 
-    x = input(
-        "Are you ready to test your knowledge?\n"
-        "Type 'yes' to start or 'no' to return to the main menu: "
-    ).strip().lower()
+    while True:
 
-    if x == "no":
-        return
+        x = input(
+            "Are you ready to test your knowledge?\n"
+            "Type 'yes' to start or 'no' to return to the main menu: "
+        ).strip().lower()
 
-    elif x != "yes":
-        print("Kindly input 'yes' or 'no'.")
-        return
+        if x == "yes":
+            break
+
+        elif x == "no":
+            return
+
+        else:
+            print("Kindly input 'yes' or 'no'.")
 
 
     questions = [
@@ -233,20 +297,16 @@ T - T - S - T - T - T - S
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        # Copy the questions
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        # Shuffle the questions
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print("\n======================================")
         print("              RESULTS")
@@ -255,6 +315,7 @@ T - T - S - T - T - T - S
         print(f"You scored {score}/{len(questions)}")
 
         if score >= 7:
+
             print("Congratulations! You have completed Section 1.")
 
             next_section = input("""
@@ -276,6 +337,7 @@ Your choice: """).strip().upper()
                 return
 
         else:
+
             print("""
 You need at least 7/10 to complete this section.
 
@@ -295,7 +357,6 @@ Your choice: """).strip().upper()
 
             else:
                 return
-
 
 
     # ==========================================
@@ -446,20 +507,14 @@ an octave.
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print(f"\nYou scored {score}/10")
 
@@ -478,7 +533,11 @@ Your choice: """).strip().upper()
             if next_section == "A":
                 break
 
+            elif next_section == "B":
+                return
+
             else:
+                print("Invalid choice. Returning to the main menu.")
                 return
 
         else:
@@ -493,9 +552,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
-                return
+            if retry == "A":
+                continue
 
+            else:
+                return
 
 
     # ==========================================
@@ -645,20 +706,14 @@ They have the same pitch but different names.
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print(f"\nYou scored {score}/10")
 
@@ -676,7 +731,12 @@ Your choice: """).strip().upper()
 
             if next_section == "A":
                 break
+
+            elif next_section == "B":
+                return
+
             else:
+                print("Invalid choice. Returning to the main menu.")
                 return
 
         else:
@@ -691,9 +751,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
-                return
+            if retry == "A":
+                continue
 
+            else:
+                return
 
 
     # ==========================================
@@ -844,20 +906,14 @@ F - G - A - B♭ - C - D - E - F
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print(f"\nYou scored {score}/10")
 
@@ -875,7 +931,12 @@ Your choice: """).strip().upper()
 
             if next_section == "A":
                 break
+
+            elif next_section == "B":
+                return
+
             else:
+                print("Invalid choice. Returning to the main menu.")
                 return
 
         else:
@@ -890,9 +951,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
-                return
+            if retry == "A":
+                continue
 
+            else:
+                return
 
 
     # ==========================================
@@ -1052,20 +1115,14 @@ F♯ → G = Semitone
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print(f"\nYou scored {score}/10")
 
@@ -1083,7 +1140,12 @@ Your choice: """).strip().upper()
 
             if next_section == "A":
                 break
+
+            elif next_section == "B":
+                return
+
             else:
+                print("Invalid choice. Returning to the main menu.")
                 return
 
         else:
@@ -1098,9 +1160,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
-                return
+            if retry == "A":
+                continue
 
+            else:
+                return
 
 
     # ==========================================
@@ -1249,20 +1313,14 @@ These orders help us identify key signatures.
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print(f"\nYou scored {score}/10")
 
@@ -1280,7 +1338,12 @@ Your choice: """).strip().upper()
 
             if next_section == "A":
                 break
+
+            elif next_section == "B":
+                return
+
             else:
+                print("Invalid choice. Returning to the main menu.")
                 return
 
         else:
@@ -1295,9 +1358,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
-                return
+            if retry == "A":
+                continue
 
+            else:
+                return
 
 
     # ==========================================
@@ -1452,20 +1517,14 @@ key signatures and relationships between keys.
 
         score = 0
 
-        for i, q in enumerate(questions, 1):
+        shuffled_questions = questions.copy()
 
-            print(f"\nQuestion {i}: {q['question']}")
+        random.shuffle(shuffled_questions)
 
-            for letter, option in q["options"].items():
-                print(f"{letter}. {option}")
+        for i, q in enumerate(shuffled_questions, 1):
 
-            user_answer = input("\nYour answer: ").strip().upper()
-
-            if user_answer == q["answer"]:
-                print("Correct!")
+            if ask_question(q, i):
                 score += 1
-            else:
-                print(f"Incorrect. The correct answer is {q['answer']}.")
 
         print("\n======================================")
         print("              RESULTS")
@@ -1516,5 +1575,8 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry != "A":
+            if retry == "A":
+                continue
+
+            else:
                 return
