@@ -1,33 +1,5 @@
 import random
 
-<<<<<<< HEAD
-# Lesson begins
-    print("""Welcome
-
-WHAT IS A MAJOR SCALE?
-
-It is a sequence of seven different notes arranged according to a specific pattern.
-
-Majors scales are based on the Major scale formula. The Major scale formula is based on the pattern of tones and semitones. 
-The pattern is tone-tone-semitone-tone-tone-tone-semitone.
-
-WHAT ARE TONES AND SEMITONES?
-
-A tone is a full step, while a semitone is a half step.
-A piano is a visual representation of tones and semitones. 
-A semitone is the distance between two adjacent keys on a piano.
-And a tone consists of two semitones.
-
-
-AN EXAMPLE?
-The C major scale is a good example of a major scale. The C major scale consists of the following notes: C, D, E, F, G, A, B, C.
-
-
-
-
-
-=======
->>>>>>> 6b644958f4c89a2cc0849acb9353a93154c616c2
 
 # ==========================================
 # FUNCTION FOR ASKING QUESTIONS
@@ -110,7 +82,7 @@ everything together.
 There are 15 major key signatures in
 Western music.
 
-Let's begin!
+Let us begin!
 """)
 
     while True:
@@ -148,6 +120,23 @@ Write your choice: """).strip().upper()
     input("\nPress Enter to begin the lesson...")
 
 
+    print("""  
+   WHAT IS A MAJOR SCALE?
+
+
+A major scale is a sequence of seven different notes arranged according to a specific pattern.
+
+
+This specific pattern is called the major scale formula. 
+The Major scale formula is based on the standard pattern of tones and semitones.
+The pattern is clear and quite song-like:
+
+ tone-tone-semitone-tone-tone-tone-semitone (T-T-S-T-T-T-S)
+
+ But wait! What are these strange words?
+ 
+    """)
+
     # ==========================================
     # SECTION 1: TONES AND SEMITONES
     # ==========================================
@@ -157,34 +146,55 @@ Write your choice: """).strip().upper()
        SECTION 1: TONES & SEMITONES
 ==========================================
 
-Before we build major scales, we need to
-understand tones and semitones.
+These terms may seem confusing at first. What do they actually mean?
+Everyone knows that tones have to do with music, and semitones?
+They sound kinda like they came from tones. Or did semitones come before tones? 
+It’s all so confusing!
 
-A semitone is the smallest interval between
-two adjacent keys on a standard piano.
 
-Two semitones make one tone.
+So let’s make it simple.
+For better understanding, let us think up a piano, keyboard, or organ - whichever one you wish to imagine.
+Suppose you have a physical one around- even better! Go to it.
+You could also use the image of the keyboard shown below.
 
-For example:
-C → C# = semitone
-C → D  = tone
+|insert image in GUI|
 
-Remember that E-F and B-C are natural
-semitones.
 
-The other adjacent natural notes are tones.
+Observe how there are both white and black keys. You might think they are there for the classic effect, but they're important.
 
-C-D = Tone
-D-E = Tone
-E-F = Semitone
-F-G = Tone
-G-A = Tone
-A-B = Tone
-B-C = Semitone
 
-The major scale pattern is:
+The invisible space between any adjacent keys (either black and white or white and black) is a semitone.
+More specifically, a semitone is the smallest interval (distance) between two adjacent (that means beside one another) keys on a standard piano or keyboard. 
 
-T - T - S - T - T - T - S
+|insert image in GUI|
+
+
+You will encounter semitones in many areas of music theory, so it's important to understand this idea. 
+
+
+Another trick to remember: most neighboring natural notes (the white keys) are a tone apart. 
+The exceptions are B–C and E–F, which are a semitone apart.
+
+
+|insert image in GUI|
+
+After talking about a part of the pair, we move to the other- the tone. A tone is made up of two semitones.
+Think of it like a math equation:
+
+1 Semitone + 1 Semitone = 1 Tone
+
+
+Back to the keyboard, you can often see a tone between two white keys with a black key between them. For example, C to D is a tone. 
+Remember our exception, though: B-C and E-F have a semitone each between them. 
+You can remember this because they do not have a black key between them.
+A tone can also be found between two black keys with a white key between them.
+
+
+|insert image in GUI|
+
+Now you can celebrate!!!! You have learnt the basics of tones and semitones! 
+
+
 """)
 
     while True:
@@ -396,22 +406,133 @@ Your choice: """).strip().upper()
      SECTION 2: C MAJOR & SCALE FORMULA
 ==========================================
 
-The major scale follows a specific pattern:
+We know that from C to D is a tone. 
+This makes it easier to understand our first major scale, C major.
 
-T - T - S - T - T - T - S
 
-C major is the easiest major scale to build
-because it contains no sharps or flats.
 
-C major:
+C Major
+C major is the foundation of major scales. If you want to learn the keyboard, you will first be taught C major.
 
-C - D - E - F - G - A - B - C
 
-The scale contains seven different note names
-before returning to C.
+C major is a major scale that has no accidentals (you will learn more about accidentals soon).
+The C major scale contains seven different notes:
+C - D - E - F - G - A - B 
+Usually, when we write a major scale, we continue one more note after the seventh note, returning to the starting note at a higher pitch.
+It is the same reason why we sing:
 
-The distance from one C to the next C is called
-an octave.
+Do - Re -Mi - Fa - Sol - La - Ti - Do 
+
+We start with Do and end with Do.
+
+For example:
+C – D – E – F – G – A – B – C
+The distance from the first C to the second C is called an octave.
+The second C has the same letter name as the first C, but it sounds higher. 
+
+How does this group of letters follow the major scale formula?
+
+We know that all major scales should follow
+T - T - S - T - T -T - S
+So let’s see how exactly.
+We will break each interval with the help of our friend “the keyboard”.
+
+
+	 C - D 
+
+|insert picture in GUI|
+
+We will use our math equation to help us understand.
+
+Remember:
+1 Semitone + 1 Semitone = 1 Tone
+
+
+From white key C to the next black key = 1 Semitone
+
+
+We also know that from an adjacent black key to a white key is also a semitone.
+
+
+From the black key to the white key D = 1 Semitone
+
+
+1 Semitone + 1 Semitone = 1 Tone
+
+
+Therefore, from white key C to white key D is a tone.
+
+
+|insert picture in GUI|
+
+From the keyboard, we can see that from D to E there is a black key. 
+What do you think will be the interval between them?
+
+Because of the little black key, the distance between D and E is once again:
+
+
+1 Semitone + 1 Semitone = 1 Tone
+
+|insert picture in GUI|
+
+E - F
+
+
+This one is rather easy. Try it out yourself.
+
+|insert image in GUI|
+
+It follows the exception we learnt. From E to F is a semitone.
+
+Can you see a pattern already?
+
+So far we have T - T - S.
+
+F - G
+
+|insert picture in GUI|
+
+
+When we see a black key between two white keys, we know there are two semitones.
+And two semitones make a tone.
+
+G - A
+
+|insert picture in GUI|
+
+Can you come up with what is next?
+
+From G to A is a tone.
+
+A - B 
+
+|insert picture in GUI|
+
+A black key is between the two white keys, once again marking a tone.
+
+
+
+B - C 
+
+
+|insert picture in GUI|
+
+Finally, we see the other half of our exception. From B to C is a semitone.
+
+Together, we have matched the  C major scale to the major scale formula.
+
+
+
+
+It’s not hard once you understand the basics!!!
+
+
+We have successfully cleared the C major scale. But you have probably heard of a sharp or a flat.
+Maybe you have even seen these weird symbols : ♯, ♭, ♮ . Moving forward, we will explore what they mean.
+
+
+
+
 """)
 
     questions = [
