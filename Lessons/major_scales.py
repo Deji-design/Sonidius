@@ -10,7 +10,7 @@ def ask_question(q, question_number):
     print(f"\nQuestion {question_number}: {q['question']}")
 
     # ==========================================
-    # MULTIPLE CHOICE
+    # MULTIPLE CHOICE QUESTIONS
     # ==========================================
 
     if q["type"] == "multiple_choice":
@@ -62,7 +62,7 @@ def ask_question(q, question_number):
 
 
     # ==========================================
-    # TRUE OR FALSE
+    # TRUE / FALSE QUESTIONS
     # ==========================================
 
     elif q["type"] == "true_false":
@@ -74,8 +74,9 @@ def ask_question(q, question_number):
 
             user_answer = input("\nYour answer: ").strip().upper()
 
-            if user_answer in ["A", "B", "TRUE", "T"]:
-                
+            # TRUE
+            if user_answer in ["A", "TRUE", "T"]:
+
                 if q["answer"] == "TRUE":
                     print("Correct!")
                     return True
@@ -84,6 +85,7 @@ def ask_question(q, question_number):
                     print("Incorrect. The correct answer is False.")
                     return False
 
+            # FALSE
             elif user_answer in ["B", "FALSE", "F"]:
 
                 if q["answer"] == "FALSE":
@@ -100,38 +102,38 @@ def ask_question(q, question_number):
 
 
     # ==========================================
-    # FILL IN THE BLANK
+    # FILL IN THE BLANK QUESTIONS
     # ==========================================
 
     elif q["type"] == "fill_blank":
 
         while True:
 
-            user_answer = input("\nYour answer: ").strip().lower()
+            user_answer = input("\nYour answer: ").strip().upper()
 
             if user_answer == "":
                 print("Please enter an answer.")
                 continue
 
-            # Remove spaces and common punctuation
-            cleaned_answer = (
+            # Remove spaces, commas and hyphens
+            # so answers such as T, T, S and T-T-S
+            # can be accepted
+            normalized_user = (
                 user_answer
                 .replace(" ", "")
                 .replace(",", "")
                 .replace("-", "")
-                .replace("–", "")
             )
 
-            correct_answer = (
+            normalized_correct = (
                 q["answer"]
-                .lower()
+                .upper()
                 .replace(" ", "")
                 .replace(",", "")
                 .replace("-", "")
-                .replace("–", "")
             )
 
-            if cleaned_answer == correct_answer:
+            if normalized_user == normalized_correct:
 
                 print("Correct!")
                 return True
@@ -143,7 +145,7 @@ def ask_question(q, question_number):
 
 
     # ==========================================
-    # KEYBOARD INTERACTION
+    # KEYBOARD QUESTIONS
     # ==========================================
 
     elif q["type"] == "keyboard":
@@ -151,7 +153,7 @@ def ask_question(q, question_number):
         print("""
 Keyboard:
 
-C   C#   D   D#   E   F   F#   G   G#   A   A#   B
+C  C#  D  D#  E  F  F#  G  G#  A  A#  B
 """)
 
         while True:
@@ -159,10 +161,15 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
             user_answer = input("\nYour answer: ").strip().upper()
 
             if user_answer == "":
-
                 print("Please enter an answer.")
+                continue
 
-            elif user_answer == q["answer"].upper():
+            # Allow both # and ♯
+            user_answer = user_answer.replace("♯", "#")
+
+            correct_answer = q["answer"].upper().replace("♯", "#")
+
+            if user_answer == correct_answer:
 
                 print("Correct!")
                 return True
@@ -174,7 +181,7 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
 
 
     # ==========================================
-    # SCALE BUILDING
+    # SCALE-BUILDING QUESTIONS
     # ==========================================
 
     elif q["type"] == "scale_building":
@@ -184,39 +191,37 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
             user_answer = input("\nYour answer: ").strip().upper()
 
             if user_answer == "":
-
                 print("Please enter an answer.")
+                continue
+
+            normalized_user = (
+                user_answer
+                .replace(" ", "")
+                .replace(",", "")
+                .replace("-", "")
+            )
+
+            normalized_correct = (
+                q["answer"]
+                .upper()
+                .replace(" ", "")
+                .replace(",", "")
+                .replace("-", "")
+            )
+
+            if normalized_user == normalized_correct:
+
+                print("Correct!")
+                return True
 
             else:
 
-                cleaned_answer = (
-                    user_answer
-                    .replace(" ", "")
-                    .replace("-", "")
-                    .replace("–", "")
-                )
-
-                correct_answer = (
-                    q["answer"]
-                    .upper()
-                    .replace(" ", "")
-                    .replace("-", "")
-                    .replace("–", "")
-                )
-
-                if cleaned_answer == correct_answer:
-
-                    print("Correct!")
-                    return True
-
-                else:
-
-                    print(f"Incorrect. The correct answer is {q['answer']}.")
-                    return False
+                print(f"Incorrect. The correct answer is {q['answer']}.")
+                return False
 
 
     # ==========================================
-    # IDENTIFY THE ERROR
+    # IDENTIFY THE ERROR QUESTIONS
     # ==========================================
 
     elif q["type"] == "identify_error":
@@ -237,7 +242,6 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
             print(f"{letters[i]}. {option_text}")
 
             if old_letter == q["answer"]:
-
                 new_correct_answer = letters[i]
 
         while True:
@@ -253,7 +257,10 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
 
                 else:
 
-                    print(f"Incorrect. The correct answer is {new_correct_answer}.")
+                    print(
+                        f"Incorrect. The correct answer is "
+                        f"{new_correct_answer}."
+                    )
                     return False
 
             else:
@@ -262,7 +269,7 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
 
 
     # ==========================================
-    # CHALLENGE / APPLICATION
+    # CHALLENGE QUESTIONS
     # ==========================================
 
     elif q["type"] == "challenge":
@@ -283,7 +290,6 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
             print(f"{letters[i]}. {option_text}")
 
             if old_letter == q["answer"]:
-
                 new_correct_answer = letters[i]
 
         while True:
@@ -299,7 +305,10 @@ C   C#   D   D#   E   F   F#   G   G#   A   A#   B
 
                 else:
 
-                    print(f"Incorrect. The correct answer is {new_correct_answer}.")
+                    print(
+                        f"Incorrect. The correct answer is "
+                        f"{new_correct_answer}."
+                    )
                     return False
 
             else:
@@ -473,17 +482,17 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
     questions = [
 
         # ==========================================
-        # MULTIPLE CHOICE - 30 QUESTIONS
+        # MULTIPLE CHOICE - 30
         # ==========================================
 
         {
             "type": "multiple_choice",
             "question": "What is a semitone?",
             "options": {
-                "A": "The distance between two tones",
+                "A": "Two adjacent tones",
                 "B": "The smallest interval between adjacent keys",
-                "C": "Two whole tones",
-                "D": "The distance between two scales"
+                "C": "Three semitones",
+                "D": "A complete octave"
             },
             "answer": "B"
         },
@@ -528,22 +537,22 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
             "type": "multiple_choice",
             "question": "Which pair of natural notes is a semitone apart?",
             "options": {
-                "A": "C-D",
-                "B": "D-E",
-                "C": "E-F",
-                "D": "F-G"
+                "A": "C and D",
+                "B": "D and E",
+                "C": "E and F",
+                "D": "F and G"
             },
             "answer": "C"
         },
 
         {
             "type": "multiple_choice",
-            "question": "Which other pair of natural notes is a semitone apart?",
+            "question": "Which other natural pair is a semitone apart?",
             "options": {
-                "A": "A-B",
-                "B": "B-C",
-                "C": "C-D",
-                "D": "F-G"
+                "A": "A and B",
+                "B": "B and C",
+                "C": "C and D",
+                "D": "D and E"
             },
             "answer": "B"
         },
@@ -574,12 +583,12 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Two white keys with one black key between them are usually separated by what?",
+            "question": "Two white keys with one black key between them are usually separated by a:",
             "options": {
-                "A": "Two tones",
-                "B": "A tone",
-                "C": "A semitone",
-                "D": "Three semitones"
+                "A": "Semitone",
+                "B": "Tone",
+                "C": "Third",
+                "D": "Fourth"
             },
             "answer": "B"
         },
@@ -588,8 +597,8 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
             "type": "multiple_choice",
             "question": "What is the interval pattern from C to F?",
             "options": {
-                "A": "T-S-T",
-                "B": "S-T-T",
+                "A": "S-T-T",
+                "B": "T-S-T",
                 "C": "T-T-S",
                 "D": "S-S-T"
             },
@@ -598,7 +607,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Which pair of natural notes is a tone apart?",
+            "question": "Which pair is a tone apart?",
             "options": {
                 "A": "E-F",
                 "B": "B-C",
@@ -622,10 +631,10 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Three tones are equal to how many semitones?",
+            "question": "3 tones are equal to how many semitones?",
             "options": {
                 "A": "3",
-                "B": "4",
+                "B": "5",
                 "C": "6",
                 "D": "8"
             },
@@ -634,7 +643,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Two tones are equal to how many semitones?",
+            "question": "2 tones are equal to how many semitones?",
             "options": {
                 "A": "2",
                 "B": "3",
@@ -646,7 +655,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Which natural note comes immediately after E?",
+            "question": "Which note comes immediately after E in the natural note sequence?",
             "options": {
                 "A": "F",
                 "B": "F#",
@@ -658,7 +667,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "What note is one tone above C?",
+            "question": "What note is a tone above C?",
             "options": {
                 "A": "C#",
                 "B": "D",
@@ -670,7 +679,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "What note is one semitone above E?",
+            "question": "What note is a semitone above E?",
             "options": {
                 "A": "F",
                 "B": "F#",
@@ -682,22 +691,22 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "What note is one semitone above B?",
+            "question": "What note is a semitone above B?",
             "options": {
                 "A": "B#",
-                "B": "C#",
+                "B": "A#",
                 "C": "C",
-                "D": "A#"
+                "D": "C#"
             },
             "answer": "C"
         },
 
         {
             "type": "multiple_choice",
-            "question": "Which natural-note pair is NOT a semitone apart?",
+            "question": "Which natural pair is NOT a semitone apart?",
             "options": {
-                "A": "E-F",
-                "B": "B-C",
+                "A": "B-C",
+                "B": "E-F",
                 "C": "C-D",
                 "D": "None"
             },
@@ -744,17 +753,17 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
             "type": "multiple_choice",
             "question": "Which statement is correct?",
             "options": {
-                "A": "A tone equals one semitone",
-                "B": "A tone equals two semitones",
-                "C": "A semitone equals two tones",
-                "D": "A tone has no semitones"
+                "A": "A tone is one semitone",
+                "B": "A tone is two semitones",
+                "C": "A tone is three semitones",
+                "D": "A tone is four semitones"
             },
             "answer": "B"
         },
 
         {
             "type": "multiple_choice",
-            "question": "Which natural-note pair is separated by a tone?",
+            "question": "Which pair of natural notes is separated by a tone?",
             "options": {
                 "A": "E-F",
                 "B": "B-C",
@@ -766,12 +775,12 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "What is the interval pattern from C to G?",
+            "question": "What is the interval pattern from C to F?",
             "options": {
-                "A": "T-T-S-T",
-                "B": "T-S-T-T",
-                "C": "S-T-T-T",
-                "D": "T-T-T-S"
+                "A": "T-T-S",
+                "B": "T-S-T",
+                "C": "S-T-T",
+                "D": "S-S-T"
             },
             "answer": "A"
         },
@@ -790,31 +799,31 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Moving one key to an adjacent key on a keyboard represents what?",
+            "question": "Moving one key to the next key on a keyboard gives a:",
             "options": {
-                "A": "A semitone",
-                "B": "A tone",
-                "C": "Two tones",
-                "D": "A scale"
+                "A": "Semitone",
+                "B": "Tone",
+                "C": "Third",
+                "D": "Fourth"
             },
             "answer": "A"
         },
 
         {
             "type": "multiple_choice",
-            "question": "Moving two semitones represents what?",
+            "question": "Moving two semitones gives a:",
             "options": {
-                "A": "A semitone",
-                "B": "A tone",
-                "C": "Three tones",
-                "D": "A scale"
+                "A": "Semitone",
+                "B": "Tone",
+                "C": "Third",
+                "D": "Fourth"
             },
             "answer": "B"
         },
 
         {
             "type": "multiple_choice",
-            "question": "Which is the correct major-scale interval pattern?",
+            "question": "What is the correct major-scale interval pattern?",
             "options": {
                 "A": "T-T-S-T-T-T-S",
                 "B": "T-S-T-T-S-T-T",
@@ -826,19 +835,19 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "multiple_choice",
-            "question": "Which sequence correctly shows the first four notes of the C major scale?",
+            "question": "What are the first four notes of the C major scale?",
             "options": {
                 "A": "C-D-E-F",
-                "B": "C-C#-D-E",
-                "C": "C-D#-E-F#",
-                "D": "C-E-F-G"
+                "B": "C-D-F-G",
+                "C": "C-E-F-G",
+                "D": "C-E-G-B"
             },
             "answer": "A"
         },
 
 
         # ==========================================
-        # TRUE / FALSE - 5 QUESTIONS
+        # TRUE / FALSE - 5
         # ==========================================
 
         {
@@ -873,236 +882,236 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
 
         # ==========================================
-        # FILL IN THE BLANK - 10 QUESTIONS
+        # FILL IN THE BLANK - 10
         # ==========================================
 
         {
             "type": "fill_blank",
-            "question": "A tone is equal to _____ semitones.",
+            "question": "A tone is equal to ___ semitones.",
             "answer": "2"
         },
 
         {
             "type": "fill_blank",
-            "question": "A semitone is the smallest interval between _____ keys.",
+            "question": "A semitone is the smallest interval between ___ keys.",
             "answer": "adjacent"
         },
 
         {
             "type": "fill_blank",
-            "question": "C to D is _____ semitones.",
+            "question": "C-D is ___ semitones.",
             "answer": "2"
         },
 
         {
             "type": "fill_blank",
-            "question": "E to F is _____ semitone.",
+            "question": "E-F is ___ semitone.",
             "answer": "1"
         },
 
         {
             "type": "fill_blank",
-            "question": "B to C is _____ semitone.",
+            "question": "B-C is ___ semitone.",
             "answer": "1"
         },
 
         {
             "type": "fill_blank",
-            "question": "F to G is _____ semitones.",
+            "question": "F-G is ___ semitones.",
             "answer": "2"
         },
 
         {
             "type": "fill_blank",
-            "question": "A to B is _____ semitones.",
+            "question": "A-B is ___ semitones.",
             "answer": "2"
         },
 
         {
             "type": "fill_blank",
-            "question": "The first three intervals of the C major scale are _____, _____, _____.",
+            "question": "The first three intervals of C major are ___.",
             "answer": "TTS"
         },
 
         {
             "type": "fill_blank",
-            "question": "The major scale begins with two _____ .",
-            "answer": "tones"
+            "question": "The major scale begins with ___ tones.",
+            "answer": "2"
         },
 
         {
             "type": "fill_blank",
-            "question": "The complete major scale pattern is T-T-S-T-T-T-_____.",
+            "question": "T-T-S-T-T-T-___ is the complete major-scale pattern.",
             "answer": "S"
         },
 
 
         # ==========================================
-        # KEYBOARD INTERACTION - 8 QUESTIONS
+        # KEYBOARD - 8
         # ==========================================
 
         {
             "type": "keyboard",
-            "question": "Starting from C, move up one semitone. What note do you reach?",
+            "question": "Starting from C, move up 1 semitone. What note do you reach?",
             "answer": "C#"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from C, move up two semitones. What note do you reach?",
+            "question": "Starting from C, move up 2 semitones. What note do you reach?",
             "answer": "D"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from D, move up one semitone. What note do you reach?",
+            "question": "Starting from D, move up 1 semitone. What note do you reach?",
             "answer": "D#"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from E, move up one semitone. What note do you reach?",
+            "question": "Starting from E, move up 1 semitone. What note do you reach?",
             "answer": "F"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from F, move up two semitones. What note do you reach?",
+            "question": "Starting from F, move up 2 semitones. What note do you reach?",
             "answer": "G"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from G, move up one semitone. What note do you reach?",
+            "question": "Starting from G, move up 1 semitone. What note do you reach?",
             "answer": "G#"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from A, move up two semitones. What note do you reach?",
+            "question": "Starting from A, move up 2 semitones. What note do you reach?",
             "answer": "B"
         },
 
         {
             "type": "keyboard",
-            "question": "Starting from B, move up one semitone. What note do you reach?",
+            "question": "Starting from B, move up 1 semitone. What note do you reach?",
             "answer": "C"
         },
 
 
         # ==========================================
-        # SCALE BUILDING - 8 QUESTIONS
+        # SCALE BUILDING - 8
         # ==========================================
 
         {
             "type": "scale_building",
-            "question": "Using the major-scale pattern T-T-S, complete: C-D-E-_____",
+            "question": "C-D-E-___ using the T-T-S pattern.",
             "answer": "F"
         },
 
         {
             "type": "scale_building",
-            "question": "Complete the C major scale: C-D-E-F-G-_____",
+            "question": "C-D-E-F-G-___",
             "answer": "A"
         },
 
         {
             "type": "scale_building",
-            "question": "Complete the C major scale: C-D-E-F-G-A-_____",
+            "question": "C-D-E-F-G-A-___",
             "answer": "B"
         },
 
         {
             "type": "scale_building",
-            "question": "Complete the C major scale: C-D-E-F-G-A-B-_____",
+            "question": "C-D-E-F-G-A-B-___",
             "answer": "C"
         },
 
         {
             "type": "scale_building",
-            "question": "What is the interval pattern from C-D-E-F?",
+            "question": "What is the interval pattern in C-D-E-F?",
             "answer": "TTS"
         },
 
         {
             "type": "scale_building",
-            "question": "What is the interval pattern from F-G-A-B?",
+            "question": "What is the interval pattern in F-G-A-B?",
             "answer": "TTT"
         },
 
         {
             "type": "scale_building",
-            "question": "What interval comes after B in the C major scale?",
+            "question": "What is the interval after B in the C major scale?",
             "answer": "S"
         },
 
         {
             "type": "scale_building",
-            "question": "What interval comes after E in the C major scale?",
+            "question": "What is the interval after E in the C major scale?",
             "answer": "S"
         },
 
 
         # ==========================================
-        # IDENTIFY THE ERROR - 4 QUESTIONS
+        # IDENTIFY THE ERROR - 4
         # ==========================================
 
         {
             "type": "identify_error",
-            "question": "Alex says: 'F to G is one semitone.' What is wrong?",
+            "question": "Alex says: 'F-G is 1 semitone.' What is wrong?",
             "options": {
-                "A": "Nothing is wrong.",
-                "B": "F to G is two semitones.",
-                "C": "F to G is three semitones.",
-                "D": "F to G is four semitones."
+                "A": "Nothing is wrong",
+                "B": "F-G is 2 semitones",
+                "C": "F-G is 3 semitones",
+                "D": "F-G is 4 semitones"
             },
             "answer": "B"
         },
 
         {
             "type": "identify_error",
-            "question": "A student says: 'E to F is a tone.' What is the error?",
+            "question": "A student says: 'E-F is a tone.' What is wrong?",
             "options": {
-                "A": "E to F is two tones.",
-                "B": "E to F is three semitones.",
-                "C": "E to F is a semitone.",
-                "D": "There is no error."
+                "A": "E-F is 2 tones",
+                "B": "E-F is 3 semitones",
+                "C": "E-F is a semitone",
+                "D": "Nothing is wrong"
             },
             "answer": "C"
         },
 
         {
             "type": "identify_error",
-            "question": "A student calculates D to E as 2 semitones. What is the error?",
+            "question": "A student says: 'D-E is 2 semitones.' Is there an error?",
             "options": {
-                "A": "D to E is one semitone.",
-                "B": "D to E is two semitones.",
-                "C": "D to E is three semitones.",
-                "D": "D to E is four semitones."
+                "A": "D-E is 1 semitone",
+                "B": "There is no error",
+                "C": "D-E is 3 semitones",
+                "D": "D-E is 4 semitones"
             },
             "answer": "B"
         },
 
         {
             "type": "identify_error",
-            "question": "Which part of this major-scale pattern is wrong? T-T-S-T-T-T-T",
+            "question": "A student writes the major-scale pattern as T-T-S-T-T-T-T. What is the error?",
             "options": {
-                "A": "The first T",
+                "A": "The first T should be S",
                 "B": "The final T should be S",
-                "C": "The first S",
-                "D": "Nothing is wrong"
+                "C": "The third S should be T",
+                "D": "There is no error"
             },
             "answer": "B"
         },
 
 
         # ==========================================
-        # CHALLENGE / APPLICATION - 5 QUESTIONS
+        # CHALLENGE / APPLICATION - 5
         # ==========================================
 
         {
             "type": "challenge",
-            "question": "Starting from C, move up 4 semitones. Which note do you reach?",
+            "question": "Starting from C, move up 4 semitones. What note do you reach?",
             "options": {
                 "A": "D",
                 "B": "D#",
@@ -1114,7 +1123,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "challenge",
-            "question": "Starting from E, move up 3 semitones. Which note do you reach?",
+            "question": "Starting from E, move up 3 semitones. What note do you reach?",
             "options": {
                 "A": "F#",
                 "B": "G",
@@ -1126,19 +1135,19 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "challenge",
-            "question": "The first three notes of a major scale follow T-T. Starting from C, which notes should they be?",
+            "question": "The first three notes of a major scale starting on C follow T-T. Which notes are they?",
             "options": {
                 "A": "C-D-E",
-                "B": "C-C#-D",
-                "C": "C-D-F",
-                "D": "C-E-F"
+                "B": "C-D-F",
+                "C": "C-E-F",
+                "D": "C-E-G"
             },
             "answer": "A"
         },
 
         {
             "type": "challenge",
-            "question": "Starting from C, after following T-T-S, where do you land?",
+            "question": "Starting from C, move T-T-S. What note do you reach?",
             "options": {
                 "A": "E",
                 "B": "F",
@@ -1150,12 +1159,12 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
         {
             "type": "challenge",
-            "question": "Which of the following represents a major scale?",
+            "question": "Which type of scale follows the pattern T-T-S-T-T-T-S?",
             "options": {
-                "A": "T-T-S-T-T-T-S",
-                "B": "T-S-T-T-S-T-T",
-                "C": "S-T-T-S-T-T-T",
-                "D": "T-T-T-S-T-S-T"
+                "A": "Major scale",
+                "B": "Minor scale",
+                "C": "Chromatic scale",
+                "D": "Pentatonic scale"
             },
             "answer": "A"
         }
@@ -1164,28 +1173,16 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
 
     # ==========================================
-    # SELECT 15 QUESTIONS
+    # CHECK QUESTION BANK
     # ==========================================
 
-    # We want every attempt to contain
-    # different types of questions.
-
     multiple_choice_questions = []
-
     true_false_questions = []
-
     fill_blank_questions = []
-
     keyboard_questions = []
-
     scale_building_questions = []
-
     identify_error_questions = []
-
     challenge_questions = []
-
-
-    # Separate the questions by type
 
     for question in questions:
 
@@ -1212,104 +1209,113 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
 
 
     # ==========================================
-    # CREATE A BALANCED 15-QUESTION TEST
+    # TEST LOOP
     # ==========================================
+    #
+    # The student can retry the test without
+    # repeating the teaching notes.
+    #
 
-    selected_questions = []
+    while True:
 
-    # 5 Multiple Choice
-    selected_questions.extend(
-        random.sample(multiple_choice_questions, 5)
-    )
+        # ==========================================
+        # CREATE A NEW RANDOM TEST
+        # ==========================================
 
-    # 1 True / False
-    selected_questions.extend(
-        random.sample(true_false_questions, 1)
-    )
+        selected_questions = []
 
-    # 2 Fill in the blank
-    selected_questions.extend(
-        random.sample(fill_blank_questions, 2)
-    )
+        # 5 Multiple Choice
+        selected_questions.extend(
+            random.sample(multiple_choice_questions, 5)
+        )
 
-    # 2 Keyboard questions
-    selected_questions.extend(
-        random.sample(keyboard_questions, 2)
-    )
+        # 1 True / False
+        selected_questions.extend(
+            random.sample(true_false_questions, 1)
+        )
 
-    # 2 Scale-building questions
-    selected_questions.extend(
-        random.sample(scale_building_questions, 2)
-    )
+        # 2 Fill in the Blank
+        selected_questions.extend(
+            random.sample(fill_blank_questions, 2)
+        )
 
-    # 1 Identify-the-error question
-    selected_questions.extend(
-        random.sample(identify_error_questions, 1)
-    )
+        # 2 Keyboard
+        selected_questions.extend(
+            random.sample(keyboard_questions, 2)
+        )
 
-    # 2 Challenge questions
-    selected_questions.extend(
-        random.sample(challenge_questions, 2)
-    )
+        # 2 Scale Building
+        selected_questions.extend(
+            random.sample(scale_building_questions, 2)
+        )
+
+        # 1 Identify the Error
+        selected_questions.extend(
+            random.sample(identify_error_questions, 1)
+        )
+
+        # 2 Challenge
+        selected_questions.extend(
+            random.sample(challenge_questions, 2)
+        )
+
+        # Shuffle the final 15 questions
+        random.shuffle(selected_questions)
 
 
-    # Shuffle the final 15 questions
-    random.shuffle(selected_questions)
+        # ==========================================
+        # RUN THE TEST
+        # ==========================================
 
+        score = 0
 
-    # ==========================================
-    # START THE TEST
-    # ==========================================
-
-    print("""
+        print("""
 ==========================================
-       SECTION 1 TEST
+          SECTION 1 TEST
 ==========================================
 
-You will receive 15 questions from a
-70-question question bank.
+You will receive 15 questions.
 
-The questions will be randomly selected.
+Your questions will be randomly selected
+from the question bank.
 
-You need at least 11 correct answers
-to pass this section.
+You need at least 11/15 to pass.
 
 Good luck!
 """)
 
 
-    score = 0
+        for i, question in enumerate(selected_questions, 1):
+
+            if ask_question(question, i):
+
+                score += 1
 
 
-    # Ask all 15 selected questions
+        # ==========================================
+        # DISPLAY RESULTS
+        # ==========================================
 
-    for i, question in enumerate(selected_questions, 1):
-
-        if ask_question(question, i):
-
-            score += 1
-
-
-    # ==========================================
-    # TEST RESULTS
-    # ==========================================
-
-    print("""
+        print("""
 ==========================================
              TEST COMPLETE
 ==========================================
 """)
 
-    print(f"You scored {score}/15.")
+        print(f"You scored {score}/15.")
 
-    percentage = (score / 15) * 100
+        percentage = (score / 15) * 100
 
-    print(f"Percentage: {percentage:.1f}%")
+        print(f"Percentage: {percentage:.1f}%")
 
 
-    if score >= 11:
+        # ==========================================
+        # PASS
+        # ==========================================
 
-        print("""
+        if score >= 11:
+
+            print("""
 Congratulations!
 
 You passed Section 1: Tones & Semitones.
@@ -1317,37 +1323,12 @@ You passed Section 1: Tones & Semitones.
 You are ready to continue to the next section.
 """)
 
-        input("Press Enter to continue...")
+            input("Press Enter to continue...")
 
-    else:
 
-        print("""
-You did not pass this attempt.
+            while True:
 
-Don't worry. Review the notes and try again.
-You will receive a new set of questions next time.
-""")
-
-        while True:
-
-            retry = input(
-                "Would you like to try the test again? "
-                "(yes/no): "
-            ).strip().lower()
-
-            if retry == "yes":
-
-                # Restart the lesson test
-                return major_scales()
-
-            elif retry == "no":
-
-                return
-
-            else:
-                print("Kindly input 'yes' or 'no'.")
-            
-            next_section = input("""
+                next_section = input("""
 Would you like to continue to Section 2?
 
 A. Yes, continue
@@ -1355,38 +1336,63 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
 
-            elif next_section == "B":
-                return
+                if next_section == "A":
 
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+                    # Section 2 will go here later
+                    print("\nSection 2 coming soon!")
+
+                    return
+
+
+                elif next_section == "B":
+
+                    return
+
+
+                else:
+
+                    print("Invalid choice. Kindly input A or B.")
+
+
+        # ==========================================
+        # FAIL
+        # ==========================================
 
         else:
 
             print("""
-You need at least 7/10 to complete this section.
+You did not pass this attempt.
 
-Let's try again so you can master the topic.
+Don't worry. Review the notes and try again.
+You will receive a new set of questions next time.
 """)
 
-            retry = input("""
-Would you like to try Section 1 again?
 
-A. Yes, try again
-B. Return to the main menu
+            while True:
 
-Your choice: """).strip().upper()
+                retry = input(
+                    "Would you like to try the test again? "
+                    "(yes/no): "
+                ).strip().lower()
 
-            if retry == "A":
-                continue
 
-            else:
-                return
+                if retry == "yes":
 
+                    # Continue the test loop.
+                    # This creates a completely new
+                    # random set of 15 questions.
+                    break
+
+
+                elif retry == "no":
+
+                    return
+
+
+                else:
+
+                    print("Kindly input 'yes' or 'no'.")
 
     # ==========================================
     # SECTION 2: C MAJOR & MAJOR SCALE FORMULA
