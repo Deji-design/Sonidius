@@ -1523,13 +1523,6 @@ Together, we have matched the  C major scale to the major scale formula.
 
 It’s not hard once you understand the basics!!!
 
-
-We have successfully cleared the C major scale. But you have probably heard of a sharp or a flat.
-Maybe you have even seen these weird symbols : ♯, ♭, ♮ . Moving forward, we will explore what they mean.
-
-
-
-
 """)
 
     questions = [
@@ -1714,21 +1707,126 @@ Your choice: """).strip().upper()
           SECTION 3: ACCIDENTALS
 ==========================================
 
-Accidentals change the pitch of notes.
+We have successfully cleared the C major scale. But you have probably heard of a sharp or a flat.
+Maybe you have even seen these weird symbols : ♯, ♭, ♮ . Moving forward, we will explore what they mean.
 
-Sharp (♯) = raises a note by one semitone.
+If we want to move a note a semitone up or a semitone down, what do we do? This is when the magic of accidentals comes into play. 
 
-Flat (♭) = lowers a note by one semitone.
 
-Natural (♮) = cancels a previous sharp or flat.
+WHAT ARE ACCIDENTALS?
+Accidentals are symbols that change a note’s pitch.
+Seems strange, right? Why do we need to change the pitch of notes? Don’t worry, we will find out later.
 
-For example:
 
-F → F♯
-B → B♭
+There are three main accidentals:
 
-D♯ and E♭ are enharmonic equivalents.
-They have the same pitch but different names.
+
+♯ SHARPS       - raise a note by one semitone 
+♭ FLATS           - lower a note by one semitone 
+♮ NATURALS  - cancel a previous sharp or flat
+
+
+SHARPS ♯
+Sharps raise a note by a semitone.
+Think of them as always wanting more. They are not satisfied with what they have, and they want more- a semitone more.
+
+
+For example,
+
+
+D♯ is one semitone higher than D.
+
+
+On the keyboard, D♯ would be the black key immediately to the right of the white key D 
+
+|insert picture in GUI|
+
+They also change the distance between notes.
+Look at this:
+
+
+The distance between C and D    = 1 tone
+The distance between C and D♯  = 1 tone and 1 semitone
+
+
+We'll explore this idea in much more detail when we learn about intervals. 
+
+
+FLATS ♭
+Flats lower a note by a semitone.
+Similar to their sharp brothers, flats also change by a semitone. The difference between them is that a flat is more generous - it gives away a semitone, lowering the note by one semitone.
+
+
+For example, 
+	
+E♭ is one semitone lower than E.
+
+
+On the keyboard, E♭ is the black key immediately to the left of the white key E.
+
+|insert picture in GUI|
+
+
+Did you notice that the D♯ and the E♭ are on the same black key? 
+Let’s look at why.
+
+
+D♯ and E♭ are written differently and have different names, but on a standard piano, they produce the same pitch. 
+This means you hear the same sound. These are called enharmonic equivalents. 
+
+
+ In an accurately written seven-note major scale, all the seven letters of music (A-B-C-D-E-F-G) must be used exactly once.
+
+
+For example,
+In an F major scale 
+F–G–A–B♭–C–D–E
+The fourth note must be called B-flat. “Why?” you may ask. There must be a B-flat. This is because the scale needs to have all seven letters (F-G-A-B-C-D-E) in that order.
+
+
+Why not use A♯?
+Both A♯ and B♭ have the same pitch, so why can’t we use either one?
+
+
+If we use A♯, there would be two A’s. Not only would that make the scale harder to read, but it would also look kinda weird.  
+So we use B♭, not A♯ 
+
+
+
+
+What if we run into a problem and we have to cancel the effect of an accidental? What do we do?
+We enter the Natural!
+
+
+NATURAL ♮
+Naturals cancel the effect of a sharp or flat affecting a note, returning the note to its natural pitch.
+They are the guys that keep things in moderation. They cancel the effect of sharps and flats, bringing notes back to their natural pitch. 
+
+
+For example,
+
+
+F♯ → F♮
+F♯ was raised by a semitone, but we want the original F back. All we have to do is add a natural accidental.
+Similarly:
+B♭ → B♮
+B♭ was lowered by a semitone. To return it to the original B, we add the natural accidental.
+
+
+We have reached another milestone!! Now we understand accidentals.
+Moving forward, we are going to discuss another exciting section.
+
+
+Remember the major scale formula? 
+T - T - S - T - T - T - S
+
+
+This gives the major scales their unique sound - the sound we often sing.
+Do - Re - Mi - Fa - Sol - La - Ti - Do.
+This “song” is a different way to name notes.
+But how do we know which notes belong in a particular key?
+And how do we know when a note needs a sharp or flat, as we saw in F major?
+
 """)
 
     questions = [
@@ -1909,27 +2007,102 @@ Your choice: """).strip().upper()
     # ==========================================
 
     print("""
+
+
+But how do we know which notes belong in a particular key?
+And how do we know when a note needs a sharp or flat, as we saw in F major?
+    
+This leads us into our next section:
+  
 ==========================================
          SECTION 4: KEY SIGNATURES
 ==========================================
 
-A key signature is a collection of sharps
-or flats written at the beginning of a
-piece of music.
+KEY SIGNATURES
+Remember F major?
+F - G - A - B♭ - C - D - E - F
+We found out that a B♭ is needed to make the major-scale formula work.
+T – T – S – T – T – T – S 
+Imagine you were writing a musical piece in F major. Would you want to put a flat after every B you need? That would be very stressful. You might even give up on the piece.
 
-It tells us which notes are consistently
-raised or lowered throughout the piece.
 
-For example:
+Thankfully, we do not need to go through that stress.
+Why so? Key signatures!
 
-F major has one flat:
 
-B♭
+A key signature is a collection of sharps or flats written at the beginning of a piece of music. It helps identify the key and tells us which notes are consistently sharpened or flattened. Each major key has its own key signature, much like a signature helps identify a person.
 
-Therefore:
+
+Look below
+
+|insert picture in GUI|
+
+You may have seen this before: the numbers and the funny-looking G.
+
+The funny-looking symbol is called the treble clef, and the five horizontal lines together are called a staff.
+
+he topmost line on the treble staff is called F.
+
+The sharp sign (♯) in the key signature tells us that every F in this piece is normally played as F♯.
+This is much easier than writing a sharp sign every time an F appears.
+
+
+If we wrote F♯  every time, it would look something like this:
+
+|insert picture in GUI|
+
+Quite frustrating.
+
+
+A standard major-key key signature contains either sharps or flats, not a mixture of both. 
+
+
+Back to F major,
 
 F - G - A - B♭ - C - D - E - F
-""")
+
+Previously, we have seen how the major-scale formula is applied.
+Let’s jog our memory with another example! 
+Look at the distance between each note:
+	F - G = 1 Tone
+	G - A = 1 Tone:
+	A - B♭ = 1 Semitone
+You might ask yourself how? Let’s go back to the keyboard.
+
+|insert picture in GUI|
+
+Do you see that B♭ comes right after A? This shows that they are a semitone apart.
+
+
+	A - B♭ = 1 Semitone
+Another one that might be confusing
+Again, to the keyboard.
+
+|insert picture in GUI|
+
+We can see that B♭ - B is a semitone. We can also remember that B - C is a semitone.
+Therefore, B♭ - C contains two semitones
+B♭ - B - C 
+1 semitone + 1 semitone = 1 Tone
+Now you can see why B♭ - C is a tone 	
+
+
+C - D = 1 Tone
+	D - E = 1 Tone
+Remember the exception:
+	E - F = 1 Semitone
+
+
+We can finally see how the major-scale formula is applied.
+
+
+F - G - A - B♭ - C - D - E - F     =     T – T – S – T – T – T – S 
+
+
+Now you know how to form the F major scale!!
+
+
+""")   
 
     questions = [
         {
@@ -2119,25 +2292,66 @@ major scale formula:
 
 T - T - S - T - T - T - S
 
-Let's look at G major.
+We have discovered how to build the F major scale. 
+We also figured out that key signatures tell us which note to sharpen or flatten.
+But F major has a flat; what if we need a sharp?
 
-G - A - B - C - D - E - F♯ - G
 
-G major contains one sharp: F♯.
+Let’s put your brains to the test!
 
+
+Our next major scale is G major; it has one sharp.
+Can you find out what note needs to be sharpened and which note completes the scale?
+Remember to use the major-scale formula
+T - T - S - T - T -T - S
+Using this, you can find your way. Start with G
+
+G - ? - ? - ? - ? - ? - ? - G
+
+This is your task:
+Build the G major scale!
+
+
+
+
+You did well; let’s see if you understand the why.
+
+
+ From 
+	G - A = 1 Tone
+	A - B = 1 Tone
+	B - C = 1 Semitone (The exception)
+
+
+
+|insert picture in GUI|
+
+    C - D = 1 Tone
+    D - E = 1 Tone
+    E - F♯ = 1 Tone
 Why?
 
-Because E to F is naturally a semitone,
-but the major scale requires a tone at
-that position.
+|insert picture in GUI|
 
-Raising F to F♯ gives:
+But the major-scale formula requires a tone between E and the next note.
+So F needs to be raised by one semitone.
+A sharp raises a note by one semitone, so F becomes F♯.
 
-E → F♯ = Tone
+Now:
+E - F♯ = 2 Semitones = 1 Tone
 
-Then:
 
-F♯ → G = Semitone
+    F♯ - G = 1 Semitone
+Why?
+
+|insert picture in GUI|
+
+F - G is a tone.
+But F♯ is one semitone higher than F.
+Therefore, the distance from F♯ to G is only one semitone.
+So:
+F♯ - G = 1 Semitone
+
 """)
 
     questions = [
@@ -2322,20 +2536,88 @@ Your choice: """).strip().upper()
       SECTION 6: SHARP & FLAT ORDERS
 ==========================================
 
-The order of flats is:
-
-B - E - A - D - G - C - F
-
-The order of sharps is:
-
-F - C - G - D - A - E - B
-
-You can remember them as:
-
-BEADGCF
-FCGDAEB
-
 These orders help us identify key signatures.
+
+You are slowly (or maybe already have) learning how accidentals are used in forming major scales.
+
+
+
+
+We will move on to a major scale with two flats.
+
+
+The name of the major scale is B♭ major.
+
+
+The cool thing about major scales is that the accidentals are added in a specific order as we move to new major scales. 
+
+
+For example, F major has one flat, while B♭ major has two. 
+The flat in F major is on B. When we move to B♭ major, that flat stays, and the note E is flattened. 
+
+
+F major   - flat on B
+B♭ major - flats on B and E
+ 
+
+
+The same theory works on major scales with sharps. The sharp in G major is on F. When we move to D major, that sharp stays, and another sharp is added to C. 
+
+
+G major - sharp on F
+D major - sharp on F and C
+
+
+
+It's better to commit to memory which notes have accidentals, since you can’t always calculate them conveniently. 
+
+
+Flats
+F major  -  B♭
+B♭ major - B♭, E♭
+E♭ major - B♭, E♭, A♭
+A♭ major - B♭, E♭, A♭, D♭
+D♭ major - B♭, E♭, A♭, D♭, G♭
+G♭ major - B♭, E♭, A♭, D♭, G♭, C♭
+C♭ major - B♭, E♭, A♭, D♭, G♭, C♭, F♭
+
+
+It might look overwhelming at first glance, but take a deep breath and calm down.
+Use what you have learnt to write the major scales and compare them to the one above. You will find out they are similar. If not, go back and revise the lesson.
+
+
+Another tip: for major keys with flats, the key is named after the second-to-last flat. 
+For example, the second-to-last flat of B♭ is B♭.
+The second-to-last flat of A♭ is A♭.
+The second-to-last flat of G♭ is G♭ , and so on.
+The only exception is F major, as it only has one flat and therefore no second-to-last.
+This only works for major scales with flats, though.
+
+
+
+Sharps
+G major    - F♯ 
+D major    - F♯ , C♯ 
+A major    - F♯ , C♯ , G♯ 
+E major    - F♯ , C♯ , G♯ , D♯ 
+B major   - F♯ , C♯ , G♯ , D♯ , A♯ 
+F♯ major - F♯ , C♯ , G♯ , D♯ , A♯ , E♯ 
+C♯ major -F♯ , C♯ , G♯ , D♯ , A♯ , E♯ , B♯ 
+
+
+
+
+Here is another surprising fact. The order of major scales with flats is in the reverse order of the notes that have sharps.
+
+
+Notes that have flats:    B, E, A, D, G, C, F
+Notes that have sharps: F, C, G, D, A, E, B
+
+
+B → E → A → D → G → C → F
+　　　　　　　　　　　　　　
+F → C → G → D → A → E → B 
+
 """)
 
     questions = [
@@ -2520,26 +2802,209 @@ Your choice: """).strip().upper()
         SECTION 7: CIRCLE OF FIFTHS
 ==========================================
 
-The Circle of Fifths is a diagram that shows
-the relationships between major keys.
+Finally, we are led to the last section of this lesson.
 
-C major is at the top and has no sharps
-or flats.
 
-Moving clockwise:
+We have successfully learnt how to build a major scale, use accidentals, and recognize key signatures.
+But there are 12 major scales. Do we have to learn every one of them separately, with their accidentals?
+
+
+Luckily for us, that is not necessary. There is a clever way to organize them. 
+
+
+ The Circle of Fifths
+The Circle of Fifths is a diagram that shows the relationships between different musical keys. 
+
+
+Like a circle, all the major scales follow each other in a certain pattern.
+
+
+The secret about the circle of fifths is that it works a bit like a clock. It has a clockwise side and an anticlockwise side.
+
+|insert picture in GUI|
+
+The clockwise side takes us through major scales with sharps, while the anticlockwise side takes us through major scales with flats.
+For the clockwise side, we move five notes up each time. For the anticlockwise side, we move five notes back, or four notes up.
+Because C major has no sharps or flats, it starts the pattern for both sides.
+
+|insert picture in GUI|
+
+For example,
+All major scales with a sharp are five notes apart.
+
+
+We start with C and count up five notes.
+
+
+C - D - E - F - G
+We land on G major.
+Another five notes:
+
+
+G - A - B - C - D
+
+
+We land on D major.
+
+Can you try the next one?
+
+
+D - ? - ? - ? - ?
+
+
+It’s:
+
+
+D - E - F - G - A
+
+We land on A major.
+Do you see the pattern?
+
+
+C - G - D - A
+As you continue adding five notes, you will eventually come to  this:
+
 
 C → G → D → A → E → B → F♯ → C♯
 
-Each step adds one sharp.
 
-Moving anticlockwise:
+What is something you notice about the key signature (number of sharps) as we move?
 
-C → F → B♭ → E♭ → A♭ ...
+Another thing to notice is that as you go up, the number of sharps increases.
 
-Each step adds one flat.
 
-The Circle of Fifths helps us understand
-key signatures and relationships between keys.
+C major - 0 sharps
+G major - 1 sharp
+D major - 2 sharps
+A major - 3 sharps
+E major - 4 sharps 
+…
+
+
+
+
+There is also a way to predict notes that would have sharps!
+
+
+Remember that the first scale with a sharp is G major, and it has a sharp on F.
+
+
+To get the next sharp, also count five notes up.
+
+
+F - G - A - B - C 
+
+
+So the next sharp is on C.
+To go a bit further,
+C - D - E - F - G
+
+
+The next sharp would be on G.
+The notes that receive sharps follow the same five-notes-up pattern. 
+
+
+To make it easier, let's use a diagram.
+
+|insert picture in GUI|
+
+
+So you see how easy it is to remember, and how to remember if you forget.
+
+
+Moving on.
+We go to the flats.
+
+
+The pattern for flats, as stated earlier, is four notes up. Four notes up can also be thought of as five notes backward, whichever works best for you.
+
+
+Once again, we start from C.
+Counting four notes upward:
+
+
+C - D - E - F
+
+
+Counting five notes backwards,
+
+
+C - B - A - G - F
+
+So you see we get the same answer.
+
+Further:
+
+
+Counting four notes upward,
+
+
+F - G - A - B
+
+
+Counting five notes backwards:
+F - E - D - C - B
+
+
+Once again, we get the same answer.
+Not as hard as it seemed, right?
+
+But we have a problem: we just found out the next note is B, but from what we know, the name of the scale is B♭.
+
+Why is that?
+
+
+Let's bring back our knowledge of the major scale formula.
+ T - T - S - T - T - T - S 
+
+
+Since we are dealing with four notes upward, what part of the major scale formula would we use?
+
+
+_  -  _  - _  
+
+
+We will use T - T - S. 
+Let’s work it out.
+From F to G  is a tone.
+From G to A is a tone.
+But from A to B is a tone.
+We need a semitone!
+
+
+To reduce the distance between A and B from a tone to a semitone, we need to lower B by a semitone.
+
+
+What can we use to lower B by a semitone?
+
+
+A flat lowers a note by a semitone.
+Therefore,
+
+
+B → B♭ 
+
+
+Now the distance from A to B♭  is a semitone, giving us the T - T - S we need.
+
+
+This is why some major scale names have accidentals. To ensure they follow the major scale formula.
+
+Like the scales with sharps, as we move forward, the number of flats increases.
+
+
+C major - 0 flats
+F major - 1 flat
+B♭ major - 2 flats
+E♭ major - 3 flats
+A♭ major - 4 flats
+…
+
+
+Let’s finalize this section with an updated diagram of the Circle of Fifths.
+
+|insert picture in GUI|
+
 """)
 
     questions = [
@@ -2726,3 +3191,14 @@ Your choice: """).strip().upper()
 
             else:
                 return
+            
+
+print(""""
+"Congratulations, you have covered all the basics to understand major scales!!!
+You should be proud of yourself for making it this far. Well done!!
+
+
+Once in a while, go through this lesson and practice diligently. Everything you have learnt will stick like glue.
+
+
+""")
