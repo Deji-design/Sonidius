@@ -1719,6 +1719,12 @@ You can now:
 ✓ Understand the Circle of Fifths
 
 You will now return to the main menu.
+
+Congratulations, you have covered all the basics to understand major scales!!!
+You should be proud of yourself for making it this far. Well done!!
+
+
+Once in a while, go through this lesson and practice diligently. Everything you have learnt will stick like glue.
 """)
 
             input("Press Enter to return to the main menu...")
@@ -1744,14 +1750,3 @@ Your choice: """).strip().upper()
 
             else:
                 return
-            
-
-print(""""
-"Congratulations, you have covered all the basics to understand major scales!!!
-You should be proud of yourself for making it this far. Well done!!
-
-
-Once in a while, go through this lesson and practice diligently. Everything you have learnt will stick like glue.
-
-
-""")
