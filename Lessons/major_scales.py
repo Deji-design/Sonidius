@@ -563,7 +563,8 @@ You are ready to continue to the next section.
             input("Press Enter to continue...")
 
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 2?
 
 A. Yes, continue
@@ -571,11 +572,12 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "B":
-                return
-            elif next_section != "A":
-                print("Invalid choice. Returning to the main menu.")
-                return
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
             break
 
@@ -774,7 +776,8 @@ It’s not hard once you understand the basics!!!
 
             print("Congratulations! You have completed Section 2.")
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 3?
 
 A. Yes, continue
@@ -782,21 +785,21 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            elif next_section == "B":
-                return
-
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+            break
 
         else:
 
             print("You need at least 11/15 to complete this section.")
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 2 again?
 
 A. Yes, try again
@@ -804,11 +807,14 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
 
 
     # ==========================================
@@ -966,7 +972,8 @@ And how do we know when a note needs a sharp or flat, as we saw in F major?
 
             print("Congratulations! You have completed Section 3.")
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 4?
 
 A. Yes, continue
@@ -974,21 +981,21 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            elif next_section == "B":
-                return
-
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+            break
 
         else:
 
             print("You need at least 11/15 to complete this section.")
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 3 again?
 
 A. Yes, try again
@@ -996,11 +1003,14 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
 
 
     # ==========================================
@@ -1129,7 +1139,8 @@ Now you know how to form the F major scale!!
 
             print("Congratulations! You have completed Section 4.")
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 5?
 
 A. Yes, continue
@@ -1137,21 +1148,21 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            elif next_section == "B":
-                return
-
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+            break
 
         else:
 
             print("You need at least 11/15 to complete this section.")
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 4 again?
 
 A. Yes, try again
@@ -1159,11 +1170,14 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
 
 
     # ==========================================
@@ -1267,7 +1281,8 @@ F♯ - G = 1 Semitone
 
             print("Congratulations! You have completed Section 5.")
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 6?
 
 A. Yes, continue
@@ -1275,21 +1290,21 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            elif next_section == "B":
-                return
-
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+            break
 
         else:
 
             print("You need at least 11/15 to complete this section.")
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 5 again?
 
 A. Yes, try again
@@ -1297,11 +1312,14 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
 
 
     # ==========================================
@@ -1421,7 +1439,8 @@ F → C → G → D → A → E → B
 
             print("Congratulations! You have completed Section 6.")
 
-            next_section = input("""
+            while True:
+                next_section = input("""
 Would you like to continue to Section 7?
 
 A. Yes, continue
@@ -1429,21 +1448,21 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
-            if next_section == "A":
-                break
+                if next_section == "A":
+                    break
+                elif next_section == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            elif next_section == "B":
-                return
-
-            else:
-                print("Invalid choice. Returning to the main menu.")
-                return
+            break
 
         else:
 
             print("You need at least 11/15 to complete this section.")
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 6 again?
 
 A. Yes, try again
@@ -1451,11 +1470,14 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
 
 
     # ==========================================
@@ -1737,7 +1759,8 @@ You need at least 11/15 to complete
 the final section.
 """)
 
-            retry = input("""
+            while True:
+                retry = input("""
 Would you like to try Section 7 again?
 
 A. Yes, try again
@@ -1745,8 +1768,11 @@ B. Return to the main menu
 
 Your choice: """).strip().upper()
 
-            if retry == "A":
-                continue
+                if retry == "A":
+                    break
+                elif retry == "B":
+                    return
+                else:
+                    print("Invalid choice. Kindly input A or B.")
 
-            else:
-                return
+            continue
