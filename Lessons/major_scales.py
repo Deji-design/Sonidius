@@ -1,4 +1,5 @@
 import random
+from Lessons.major_scale_question_banks import SECTION_QUESTIONS
 
 
 # ==========================================
@@ -479,733 +480,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
     # SECTION 1 QUESTION BANK
     # ==========================================
 
-    questions = [
-
-        # ==========================================
-        # MULTIPLE CHOICE - 30
-        # ==========================================
-
-        {
-            "type": "multiple_choice",
-            "question": "What is a semitone?",
-            "options": {
-                "A": "Two adjacent tones",
-                "B": "The smallest interval between adjacent keys",
-                "C": "Three semitones",
-                "D": "A complete octave"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones make one tone?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Is C to D a tone or semitone?",
-            "options": {
-                "A": "Tone",
-                "B": "Semitone",
-                "C": "Neither",
-                "D": "Both"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Is E to F a tone or semitone?",
-            "options": {
-                "A": "Tone",
-                "B": "Semitone",
-                "C": "Neither",
-                "D": "Both"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which pair of natural notes is a semitone apart?",
-            "options": {
-                "A": "C and D",
-                "B": "D and E",
-                "C": "E and F",
-                "D": "F and G"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which other natural pair is a semitone apart?",
-            "options": {
-                "A": "A and B",
-                "B": "B and C",
-                "C": "C and D",
-                "D": "D and E"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones are between C and D?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones are between E and F?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Two white keys with one black key between them are usually separated by a:",
-            "options": {
-                "A": "Semitone",
-                "B": "Tone",
-                "C": "Third",
-                "D": "Fourth"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What is the interval pattern from C to F?",
-            "options": {
-                "A": "S-T-T",
-                "B": "T-S-T",
-                "C": "T-T-S",
-                "D": "S-S-T"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which pair is a tone apart?",
-            "options": {
-                "A": "E-F",
-                "B": "B-C",
-                "C": "C-D",
-                "D": "None"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which pair is one semitone apart?",
-            "options": {
-                "A": "C-D",
-                "B": "D-E",
-                "C": "F-G",
-                "D": "B-C"
-            },
-            "answer": "D"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "3 tones are equal to how many semitones?",
-            "options": {
-                "A": "3",
-                "B": "5",
-                "C": "6",
-                "D": "8"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "2 tones are equal to how many semitones?",
-            "options": {
-                "A": "2",
-                "B": "3",
-                "C": "4",
-                "D": "5"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which note comes immediately after E in the natural note sequence?",
-            "options": {
-                "A": "F",
-                "B": "F#",
-                "C": "G",
-                "D": "D"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What note is a tone above C?",
-            "options": {
-                "A": "C#",
-                "B": "D",
-                "C": "D#",
-                "D": "E"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What note is a semitone above E?",
-            "options": {
-                "A": "F",
-                "B": "F#",
-                "C": "D#",
-                "D": "G"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What note is a semitone above B?",
-            "options": {
-                "A": "B#",
-                "B": "A#",
-                "C": "C",
-                "D": "C#"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which natural pair is NOT a semitone apart?",
-            "options": {
-                "A": "B-C",
-                "B": "E-F",
-                "C": "C-D",
-                "D": "None"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones are between F and G?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones are between A and B?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "How many semitones are between B and C?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which statement is correct?",
-            "options": {
-                "A": "A tone is one semitone",
-                "B": "A tone is two semitones",
-                "C": "A tone is three semitones",
-                "D": "A tone is four semitones"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Which pair of natural notes is separated by a tone?",
-            "options": {
-                "A": "E-F",
-                "B": "B-C",
-                "C": "D-E",
-                "D": "None"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What is the interval pattern from C to F?",
-            "options": {
-                "A": "T-T-S",
-                "B": "T-S-T",
-                "C": "S-T-T",
-                "D": "S-S-T"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What is the interval pattern from E to G?",
-            "options": {
-                "A": "T-T",
-                "B": "S-T",
-                "C": "T-S",
-                "D": "S-S"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Moving one key to the next key on a keyboard gives a:",
-            "options": {
-                "A": "Semitone",
-                "B": "Tone",
-                "C": "Third",
-                "D": "Fourth"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "Moving two semitones gives a:",
-            "options": {
-                "A": "Semitone",
-                "B": "Tone",
-                "C": "Third",
-                "D": "Fourth"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What is the correct major-scale interval pattern?",
-            "options": {
-                "A": "T-T-S-T-T-T-S",
-                "B": "T-S-T-T-S-T-T",
-                "C": "S-T-T-S-T-T-T",
-                "D": "T-T-T-S-T-S-T"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "multiple_choice",
-            "question": "What are the first four notes of the C major scale?",
-            "options": {
-                "A": "C-D-E-F",
-                "B": "C-D-F-G",
-                "C": "C-E-F-G",
-                "D": "C-E-G-B"
-            },
-            "answer": "A"
-        },
-
-
-        # ==========================================
-        # TRUE / FALSE - 5
-        # ==========================================
-
-        {
-            "type": "true_false",
-            "question": "A tone is made up of two semitones.",
-            "answer": "TRUE"
-        },
-
-        {
-            "type": "true_false",
-            "question": "C to D is a semitone.",
-            "answer": "FALSE"
-        },
-
-        {
-            "type": "true_false",
-            "question": "E to F is a semitone.",
-            "answer": "TRUE"
-        },
-
-        {
-            "type": "true_false",
-            "question": "B to C is a tone.",
-            "answer": "FALSE"
-        },
-
-        {
-            "type": "true_false",
-            "question": "Every pair of adjacent natural notes is a tone apart.",
-            "answer": "FALSE"
-        },
-
-
-        # ==========================================
-        # FILL IN THE BLANK - 10
-        # ==========================================
-
-        {
-            "type": "fill_blank",
-            "question": "A tone is equal to ___ semitones.",
-            "answer": "2"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "A semitone is the smallest interval between ___ keys.",
-            "answer": "adjacent"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "C-D is ___ semitones.",
-            "answer": "2"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "E-F is ___ semitone.",
-            "answer": "1"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "B-C is ___ semitone.",
-            "answer": "1"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "F-G is ___ semitones.",
-            "answer": "2"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "A-B is ___ semitones.",
-            "answer": "2"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "The first three intervals of C major are ___.",
-            "answer": "TTS"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "The major scale begins with ___ tones.",
-            "answer": "2"
-        },
-
-        {
-            "type": "fill_blank",
-            "question": "T-T-S-T-T-T-___ is the complete major-scale pattern.",
-            "answer": "S"
-        },
-
-
-        # ==========================================
-        # KEYBOARD - 8
-        # ==========================================
-
-        {
-            "type": "keyboard",
-            "question": "Starting from C, move up 1 semitone. What note do you reach?",
-            "answer": "C#"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from C, move up 2 semitones. What note do you reach?",
-            "answer": "D"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from D, move up 1 semitone. What note do you reach?",
-            "answer": "D#"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from E, move up 1 semitone. What note do you reach?",
-            "answer": "F"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from F, move up 2 semitones. What note do you reach?",
-            "answer": "G"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from G, move up 1 semitone. What note do you reach?",
-            "answer": "G#"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from A, move up 2 semitones. What note do you reach?",
-            "answer": "B"
-        },
-
-        {
-            "type": "keyboard",
-            "question": "Starting from B, move up 1 semitone. What note do you reach?",
-            "answer": "C"
-        },
-
-
-        # ==========================================
-        # SCALE BUILDING - 8
-        # ==========================================
-
-        {
-            "type": "scale_building",
-            "question": "C-D-E-___ using the T-T-S pattern.",
-            "answer": "F"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "C-D-E-F-G-___",
-            "answer": "A"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "C-D-E-F-G-A-___",
-            "answer": "B"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "C-D-E-F-G-A-B-___",
-            "answer": "C"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "What is the interval pattern in C-D-E-F?",
-            "answer": "TTS"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "What is the interval pattern in F-G-A-B?",
-            "answer": "TTT"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "What is the interval after B in the C major scale?",
-            "answer": "S"
-        },
-
-        {
-            "type": "scale_building",
-            "question": "What is the interval after E in the C major scale?",
-            "answer": "S"
-        },
-
-
-        # ==========================================
-        # IDENTIFY THE ERROR - 4
-        # ==========================================
-
-        {
-            "type": "identify_error",
-            "question": "Alex says: 'F-G is 1 semitone.' What is wrong?",
-            "options": {
-                "A": "Nothing is wrong",
-                "B": "F-G is 2 semitones",
-                "C": "F-G is 3 semitones",
-                "D": "F-G is 4 semitones"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "identify_error",
-            "question": "A student says: 'E-F is a tone.' What is wrong?",
-            "options": {
-                "A": "E-F is 2 tones",
-                "B": "E-F is 3 semitones",
-                "C": "E-F is a semitone",
-                "D": "Nothing is wrong"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "identify_error",
-            "question": "A student says: 'D-E is 2 semitones.' Is there an error?",
-            "options": {
-                "A": "D-E is 1 semitone",
-                "B": "There is no error",
-                "C": "D-E is 3 semitones",
-                "D": "D-E is 4 semitones"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "identify_error",
-            "question": "A student writes the major-scale pattern as T-T-S-T-T-T-T. What is the error?",
-            "options": {
-                "A": "The first T should be S",
-                "B": "The final T should be S",
-                "C": "The third S should be T",
-                "D": "There is no error"
-            },
-            "answer": "B"
-        },
-
-
-        # ==========================================
-        # CHALLENGE / APPLICATION - 5
-        # ==========================================
-
-        {
-            "type": "challenge",
-            "question": "Starting from C, move up 4 semitones. What note do you reach?",
-            "options": {
-                "A": "D",
-                "B": "D#",
-                "C": "E",
-                "D": "F"
-            },
-            "answer": "C"
-        },
-
-        {
-            "type": "challenge",
-            "question": "Starting from E, move up 3 semitones. What note do you reach?",
-            "options": {
-                "A": "F#",
-                "B": "G",
-                "C": "G#",
-                "D": "A"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "challenge",
-            "question": "The first three notes of a major scale starting on C follow T-T. Which notes are they?",
-            "options": {
-                "A": "C-D-E",
-                "B": "C-D-F",
-                "C": "C-E-F",
-                "D": "C-E-G"
-            },
-            "answer": "A"
-        },
-
-        {
-            "type": "challenge",
-            "question": "Starting from C, move T-T-S. What note do you reach?",
-            "options": {
-                "A": "E",
-                "B": "F",
-                "C": "F#",
-                "D": "G"
-            },
-            "answer": "B"
-        },
-
-        {
-            "type": "challenge",
-            "question": "Which type of scale follows the pattern T-T-S-T-T-T-S?",
-            "options": {
-                "A": "Major scale",
-                "B": "Minor scale",
-                "C": "Chromatic scale",
-                "D": "Pentatonic scale"
-            },
-            "answer": "A"
-        }
-
-    ]
-
-
-    # ==========================================
-    # CHECK QUESTION BANK
-    # ==========================================
-
-    multiple_choice_questions = []
-    true_false_questions = []
-    fill_blank_questions = []
-    keyboard_questions = []
-    scale_building_questions = []
-    identify_error_questions = []
-    challenge_questions = []
-
-    for question in questions:
-
-        if question["type"] == "multiple_choice":
-            multiple_choice_questions.append(question)
-
-        elif question["type"] == "true_false":
-            true_false_questions.append(question)
-
-        elif question["type"] == "fill_blank":
-            fill_blank_questions.append(question)
-
-        elif question["type"] == "keyboard":
-            keyboard_questions.append(question)
-
-        elif question["type"] == "scale_building":
-            scale_building_questions.append(question)
-
-        elif question["type"] == "identify_error":
-            identify_error_questions.append(question)
-
-        elif question["type"] == "challenge":
-            challenge_questions.append(question)
+    questions = SECTION_QUESTIONS[1]
 
 
     # ==========================================
@@ -1222,45 +497,7 @@ Now you can celebrate!!!! You have learnt the basics of tones and semitones!
         # CREATE A NEW RANDOM TEST
         # ==========================================
 
-        selected_questions = []
-
-        # 5 Multiple Choice
-        selected_questions.extend(
-            random.sample(multiple_choice_questions, 5)
-        )
-
-        # 1 True / False
-        selected_questions.extend(
-            random.sample(true_false_questions, 1)
-        )
-
-        # 2 Fill in the Blank
-        selected_questions.extend(
-            random.sample(fill_blank_questions, 2)
-        )
-
-        # 2 Keyboard
-        selected_questions.extend(
-            random.sample(keyboard_questions, 2)
-        )
-
-        # 2 Scale Building
-        selected_questions.extend(
-            random.sample(scale_building_questions, 2)
-        )
-
-        # 1 Identify the Error
-        selected_questions.extend(
-            random.sample(identify_error_questions, 1)
-        )
-
-        # 2 Challenge
-        selected_questions.extend(
-            random.sample(challenge_questions, 2)
-        )
-
-        # Shuffle the final 15 questions
-        random.shuffle(selected_questions)
+        selected_questions = random.sample(questions, 15)
 
 
         # ==========================================
@@ -1326,9 +563,7 @@ You are ready to continue to the next section.
             input("Press Enter to continue...")
 
 
-            while True:
-
-                next_section = input("""
+            next_section = input("""
 Would you like to continue to Section 2?
 
 A. Yes, continue
@@ -1336,23 +571,13 @@ B. No, return to the main menu
 
 Your choice: """).strip().upper()
 
+            if next_section == "B":
+                return
+            elif next_section != "A":
+                print("Invalid choice. Returning to the main menu.")
+                return
 
-                if next_section == "A":
-
-                    # Section 2 will go here later
-                    print("\nSection 2 coming soon!")
-
-                    return
-
-
-                elif next_section == "B":
-
-                    return
-
-
-                else:
-
-                    print("Invalid choice. Kindly input A or B.")
+            break
 
 
         # ==========================================
@@ -1525,117 +750,7 @@ It’s not hard once you understand the basics!!!
 
 """)
 
-    questions = [
-        {
-            "question": "What is the formula for a major scale?",
-            "options": {
-                "A": "T-T-S-T-T-T-S",
-                "B": "S-S-T-T-S-T-T",
-                "C": "T-S-T-T-S-T-T",
-                "D": "T-T-T-S-S-T-S"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "Which notes make up the C major scale?",
-            "options": {
-                "A": "C-D-E-F-G-A-B-C",
-                "B": "C-D-E-F#-G-A-B-C",
-                "C": "C-D-Eb-F-G-A-B-C",
-                "D": "C#-D-E-F-G-A-B-C"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "How many accidentals are in the C major scale?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "7",
-                "D": "0"
-            },
-            "answer": "D"
-        },
-
-        {
-            "question": "What is the first interval in the major scale formula?",
-            "options": {
-                "A": "Semitone",
-                "B": "Tone",
-                "C": "Octave",
-                "D": "Third"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What is the third interval in the major scale formula?",
-            "options": {
-                "A": "Tone",
-                "B": "Semitone",
-                "C": "Octave",
-                "D": "Fourth"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which natural notes are a semitone apart?",
-            "options": {
-                "A": "C-D",
-                "B": "D-E",
-                "C": "E-F",
-                "D": "F-G"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which other natural notes are a semitone apart?",
-            "options": {
-                "A": "A-B",
-                "B": "B-C",
-                "C": "C-D",
-                "D": "F-G"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What is an octave?",
-            "options": {
-                "A": "The smallest interval",
-                "B": "Two semitones",
-                "C": "The distance between a note and the next note with the same letter name",
-                "D": "A type of accidental"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "How many different letter names are used in a major scale?",
-            "options": {
-                "A": "5",
-                "B": "6",
-                "C": "7",
-                "D": "8"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which pattern correctly describes C-D-E-F?",
-            "options": {
-                "A": "T-S-T",
-                "B": "T-T-S",
-                "C": "S-T-T",
-                "D": "S-S-T"
-            },
-            "answer": "B"
-        }
-    ]
+    questions = SECTION_QUESTIONS[2]
 
 
     while True:
@@ -1646,18 +761,16 @@ It’s not hard once you understand the basics!!!
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
 
-        print(f"\nYou scored {score}/10")
+        print(f"\nYou scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("Congratulations! You have completed Section 2.")
 
@@ -1681,7 +794,7 @@ Your choice: """).strip().upper()
 
         else:
 
-            print("You need at least 7/10 to complete this section.")
+            print("You need at least 11/15 to complete this section.")
 
             retry = input("""
 Would you like to try Section 2 again?
@@ -1829,117 +942,7 @@ And how do we know when a note needs a sharp or flat, as we saw in F major?
 
 """)
 
-    questions = [
-        {
-            "question": "What does a sharp do?",
-            "options": {
-                "A": "Raises a note by one semitone",
-                "B": "Lowers a note by one semitone",
-                "C": "Raises a note by one tone",
-                "D": "Cancels a note"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "What does a flat do?",
-            "options": {
-                "A": "Raises a note by one semitone",
-                "B": "Lowers a note by one semitone",
-                "C": "Raises a note by one tone",
-                "D": "Doubles the pitch"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What does a natural sign do?",
-            "options": {
-                "A": "Raises a note",
-                "B": "Lowers a note",
-                "C": "Cancels a previous sharp or flat",
-                "D": "Creates an octave"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "What note do you get when F is raised by one semitone?",
-            "options": {
-                "A": "F♭",
-                "B": "F♯",
-                "C": "G♭♭",
-                "D": "E♯"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What note do you get when B is lowered by one semitone?",
-            "options": {
-                "A": "B♯",
-                "B": "C",
-                "C": "B♭",
-                "D": "A"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "D♯ and E♭ are examples of what?",
-            "options": {
-                "A": "Octaves",
-                "B": "Enharmonic equivalents",
-                "C": "Tones",
-                "D": "Key signatures"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What does enharmonic mean?",
-            "options": {
-                "A": "Different pitches with the same letter",
-                "B": "The same pitch represented by different note names",
-                "C": "Two notes one octave apart",
-                "D": "Two notes that are always a tone apart"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "How many different letter names should a major scale contain?",
-            "options": {
-                "A": "5",
-                "B": "6",
-                "C": "7",
-                "D": "8"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which is the correct seven-letter spelling?",
-            "options": {
-                "A": "A-B-C-D-E-F-G",
-                "B": "A-B-C-D-E-F-F",
-                "C": "A-B-C-C-E-F-G",
-                "D": "A-B-B-D-E-F-G"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "Which pair has the same pitch but different note names?",
-            "options": {
-                "A": "C-D",
-                "B": "D-E",
-                "C": "D♯-E♭",
-                "D": "F-G"
-            },
-            "answer": "C"
-        }
-    ]
+    questions = SECTION_QUESTIONS[3]
 
 
     while True:
@@ -1950,18 +953,16 @@ And how do we know when a note needs a sharp or flat, as we saw in F major?
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
 
-        print(f"\nYou scored {score}/10")
+        print(f"\nYou scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("Congratulations! You have completed Section 3.")
 
@@ -1985,7 +986,7 @@ Your choice: """).strip().upper()
 
         else:
 
-            print("You need at least 7/10 to complete this section.")
+            print("You need at least 11/15 to complete this section.")
 
             retry = input("""
 Would you like to try Section 3 again?
@@ -2104,117 +1105,7 @@ Now you know how to form the F major scale!!
 
 """)   
 
-    questions = [
-        {
-            "question": "What is a key signature?",
-            "options": {
-                "A": "A type of musical instrument",
-                "B": "A collection of sharps or flats that identifies a key",
-                "C": "The final note of a scale",
-                "D": "A type of rhythm"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What does a key signature help identify?",
-            "options": {
-                "A": "The key of a piece of music",
-                "B": "The tempo",
-                "C": "The volume",
-                "D": "The instrument"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "A major key signature can contain:",
-            "options": {
-                "A": "Only sharps and flats together",
-                "B": "Sharps or flats",
-                "C": "Only natural signs",
-                "D": "Only one accidental"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "How many flats are in the key signature of F major?",
-            "options": {
-                "A": "0",
-                "B": "1",
-                "C": "2",
-                "D": "3"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which note is flat in F major?",
-            "options": {
-                "A": "A♭",
-                "B": "E♭",
-                "C": "B♭",
-                "D": "D♭"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which is the F major scale?",
-            "options": {
-                "A": "F-G-A-B-C-D-E-F",
-                "B": "F-G-A-B♭-C-D-E-F",
-                "C": "F-G-A-B♯-C-D-E-F",
-                "D": "F-G-A-B-C♯-D-E-F"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Why is B lowered to B♭ in F major?",
-            "options": {
-                "A": "To make A-B♭ a semitone",
-                "B": "To make A-B♭ a tone",
-                "C": "To create an octave",
-                "D": "Because all F major notes are flat"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What is the distance from A to B♭?",
-            "options": {
-                "A": "A tone",
-                "B": "A semitone",
-                "C": "An octave",
-                "D": "A third"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What is the distance from B♭ to C?",
-            "options": {
-                "A": "A semitone",
-                "B": "A tone",
-                "C": "An octave",
-                "D": "A fourth"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which major key has no sharps or flats in its key signature?",
-            "options": {
-                "A": "G major",
-                "B": "F major",
-                "C": "C major",
-                "D": "D major"
-            },
-            "answer": "C"
-        }
-    ]
+    questions = SECTION_QUESTIONS[4]
 
 
     while True:
@@ -2225,18 +1116,16 @@ Now you know how to form the F major scale!!
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
 
-        print(f"\nYou scored {score}/10")
+        print(f"\nYou scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("Congratulations! You have completed Section 4.")
 
@@ -2260,7 +1149,7 @@ Your choice: """).strip().upper()
 
         else:
 
-            print("You need at least 7/10 to complete this section.")
+            print("You need at least 11/15 to complete this section.")
 
             retry = input("""
 Would you like to try Section 4 again?
@@ -2354,117 +1243,7 @@ F♯ - G = 1 Semitone
 
 """)
 
-    questions = [
-        {
-            "question": "What should you choose first when building a major scale?",
-            "options": {
-                "A": "The tonic",
-                "B": "The final accidental",
-                "C": "The octave",
-                "D": "The key signature"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "Which is the G major scale?",
-            "options": {
-                "A": "G-A-B-C-D-E-F-G",
-                "B": "G-A-B-C-D-E-F♯-G",
-                "C": "G-A-B♭-C-D-E-F-G",
-                "D": "G-A♭-B-C-D-E-F-G"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "How many sharps are in G major?",
-            "options": {
-                "A": "0",
-                "B": "1",
-                "C": "2",
-                "D": "3"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which note is sharp in G major?",
-            "options": {
-                "A": "C♯",
-                "B": "D♯",
-                "C": "F♯",
-                "D": "G♯"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Why is F raised to F♯ in G major?",
-            "options": {
-                "A": "To make E-F♯ a tone",
-                "B": "To make E-F♯ a semitone",
-                "C": "To make F♯-G a tone",
-                "D": "To create an octave"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "What is the distance from E to F♯?",
-            "options": {
-                "A": "Semitone",
-                "B": "Tone",
-                "C": "Octave",
-                "D": "Third"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What is the distance from F♯ to G?",
-            "options": {
-                "A": "Tone",
-                "B": "Semitone",
-                "C": "Octave",
-                "D": "Fourth"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which major key has exactly one sharp?",
-            "options": {
-                "A": "F major",
-                "B": "C major",
-                "C": "G major",
-                "D": "D major"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which note is NOT part of G major?",
-            "options": {
-                "A": "G",
-                "B": "B",
-                "C": "F",
-                "D": "F♯"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "What note completes the G major scale?",
-            "options": {
-                "A": "F",
-                "B": "F♯",
-                "C": "G♯",
-                "D": "A"
-            },
-            "answer": "B"
-        }
-    ]
+    questions = SECTION_QUESTIONS[5]
 
 
     while True:
@@ -2475,18 +1254,16 @@ F♯ - G = 1 Semitone
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
 
-        print(f"\nYou scored {score}/10")
+        print(f"\nYou scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("Congratulations! You have completed Section 5.")
 
@@ -2510,7 +1287,7 @@ Your choice: """).strip().upper()
 
         else:
 
-            print("You need at least 7/10 to complete this section.")
+            print("You need at least 11/15 to complete this section.")
 
             retry = input("""
 Would you like to try Section 5 again?
@@ -2620,117 +1397,7 @@ F → C → G → D → A → E → B
 
 """)
 
-    questions = [
-        {
-            "question": "What is the order of flats?",
-            "options": {
-                "A": "B-E-A-D-G-C-F",
-                "B": "F-C-G-D-A-E-B",
-                "C": "C-G-D-A-E-B-F",
-                "D": "A-B-C-D-E-F-G"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "What is the order of sharps?",
-            "options": {
-                "A": "B-E-A-D-G-C-F",
-                "B": "F-C-G-D-A-E-B",
-                "C": "C-F-B-E-A-D-G",
-                "D": "G-D-A-E-B-F-C"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which flat appears first in the order of flats?",
-            "options": {
-                "A": "E♭",
-                "B": "A♭",
-                "C": "B♭",
-                "D": "D♭"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which sharp appears first in the order of sharps?",
-            "options": {
-                "A": "C♯",
-                "B": "F♯",
-                "C": "G♯",
-                "D": "D♯"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "How many flats are in B♭ major?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "How many sharps are in A major?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which flats are in E♭ major?",
-            "options": {
-                "A": "B♭ and E♭",
-                "B": "B♭, E♭ and A♭",
-                "C": "B♭, E♭, A♭ and D♭",
-                "D": "B♭ only"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which sharps are in E major?",
-            "options": {
-                "A": "F♯, C♯ and G♯",
-                "B": "F♯ and C♯",
-                "C": "F♯, C♯, G♯ and D♯",
-                "D": "F♯ only"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "For major keys with flats, how can you identify the key?",
-            "options": {
-                "A": "Use the first flat",
-                "B": "Use the last flat",
-                "C": "Use the second-to-last flat",
-                "D": "Use the first sharp"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which major key is the exception to the second-to-last-flat rule?",
-            "options": {
-                "A": "F major",
-                "B": "B♭ major",
-                "C": "E♭ major",
-                "D": "A♭ major"
-            },
-            "answer": "A"
-        }
-    ]
+    questions = SECTION_QUESTIONS[6]
 
 
     while True:
@@ -2741,18 +1408,16 @@ F → C → G → D → A → E → B
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
 
-        print(f"\nYou scored {score}/10")
+        print(f"\nYou scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("Congratulations! You have completed Section 6.")
 
@@ -2776,7 +1441,7 @@ Your choice: """).strip().upper()
 
         else:
 
-            print("You need at least 7/10 to complete this section.")
+            print("You need at least 11/15 to complete this section.")
 
             retry = input("""
 Would you like to try Section 6 again?
@@ -3007,117 +1672,7 @@ Let’s finalize this section with an updated diagram of the Circle of Fifths.
 
 """)
 
-    questions = [
-        {
-            "question": "Which major key is at the top of the Circle of Fifths?",
-            "options": {
-                "A": "G major",
-                "B": "F major",
-                "C": "C major",
-                "D": "D major"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "How many sharps or flats does C major have?",
-            "options": {
-                "A": "0",
-                "B": "1",
-                "C": "2",
-                "D": "7"
-            },
-            "answer": "A"
-        },
-
-        {
-            "question": "Moving clockwise around the Circle of Fifths takes you toward:",
-            "options": {
-                "A": "Flat keys",
-                "B": "Sharp keys",
-                "C": "Minor keys only",
-                "D": "Natural notes only"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "What happens to the number of sharps when moving clockwise?",
-            "options": {
-                "A": "It decreases",
-                "B": "It stays the same",
-                "C": "It increases by one",
-                "D": "It becomes zero"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Which key comes after C when moving clockwise?",
-            "options": {
-                "A": "F",
-                "B": "G",
-                "C": "D",
-                "D": "B♭"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which key comes after G when moving clockwise?",
-            "options": {
-                "A": "F",
-                "B": "A",
-                "C": "D",
-                "D": "E"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "Moving anticlockwise around the Circle of Fifths takes you toward:",
-            "options": {
-                "A": "Sharp keys",
-                "B": "Flat keys",
-                "C": "Only minor keys",
-                "D": "No key signatures"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Which key comes after C when moving anticlockwise?",
-            "options": {
-                "A": "G",
-                "B": "D",
-                "C": "F",
-                "D": "A"
-            },
-            "answer": "C"
-        },
-
-        {
-            "question": "How many flats does B♭ major have?",
-            "options": {
-                "A": "1",
-                "B": "2",
-                "C": "3",
-                "D": "4"
-            },
-            "answer": "B"
-        },
-
-        {
-            "question": "Why is B♭ used in B♭ major?",
-            "options": {
-                "A": "To make A-B♭ a tone and follow the major scale formula",
-                "B": "To make A-B♭ a semitone",
-                "C": "To create an octave",
-                "D": "Because every note in B♭ major is flat"
-            },
-            "answer": "A"
-        }
-    ]
+    questions = SECTION_QUESTIONS[7]
 
 
     while True:
@@ -3128,11 +1683,9 @@ Let’s finalize this section with an updated diagram of the Circle of Fifths.
 
         score = 0
 
-        shuffled_questions = questions.copy()
+        selected_questions = random.sample(questions, 15)
 
-        random.shuffle(shuffled_questions)
-
-        for i, q in enumerate(shuffled_questions, 1):
+        for i, q in enumerate(selected_questions, 1):
 
             if ask_question(q, i):
                 score += 1
@@ -3141,9 +1694,9 @@ Let’s finalize this section with an updated diagram of the Circle of Fifths.
         print("              RESULTS")
         print("======================================")
 
-        print(f"You scored {score}/10")
+        print(f"You scored {score}/15")
 
-        if score >= 7:
+        if score >= 11:
 
             print("""
 ==========================================
@@ -3174,7 +1727,7 @@ You will now return to the main menu.
         else:
 
             print("""
-You need at least 7/10 to complete
+You need at least 11/15 to complete
 the final section.
 """)
 
