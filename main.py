@@ -64,20 +64,7 @@ def main() :
     print(f"Welcome to the Interactive Music Tutor {nickname}!")
 
 
-<<<<<<< Updated upstream
 # Menu selection
-=======
-        print()
-        print("Please select a number from the list below:")
-        print()
-        print("1. Learn major scales")
-        print("2. Learn minor scales")
-        print("3. Learn note intervals")
-        print("4. Learn musical terminologies")
-        print("5. Exit Sonidius")
-        print()
->>>>>>> Stashed changes
-
     print ()
     print ("Please select a number from the list below:")
     print ("1. Learn major scales")
