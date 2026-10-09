@@ -1,27 +1,33 @@
+import random
+
+from Lessons.major_scales import ask_question
+from Lessons.minor_scale_question_banks import SECTION_QUESTIONS
+
+
 def minor_scales():
     print("""
-    
-    
-    
-    
+
+
+
+
     ==========================================
         SONIDIUS - MINOR SCALES
     ==========================================
-    
+
 
    INTRODUCTION
 
 If you are joining this lesson from the previous one, welcome back!!!!!!!!!
-However, if you are here for your first lesson, get ready to advance your musical knowledge. 
+However, if you are here for your first lesson, get ready to advance your musical knowledge.
 
-Minor scales can seem complicated at first, but a solid foundation in major scales makes them much easier to understand. 
-Because minor scales are closely related to major scales, many of the ideas you've already learned will help you throughout this lesson. 
+Minor scales can seem complicated at first, but a solid foundation in major scales makes them much easier to understand.
+Because minor scales are closely related to major scales, many of the ideas you've already learned will help you throughout this lesson.
 However, if you don’t have a solid understanding of major scales, you can review the previous lesson on major scales, which explains everything in detail.
- 
+
 
 INTRODUCTION TO MINOR SCALES
 
-As usual, we’ll be going through this lesson with the help of our keyboard image. 
+As usual, we’ll be going through this lesson with the help of our keyboard image.
 If you have a physical keyboard instrument (keyboard, piano, or organ), you can use that too.
 
 With a quick revision of major scales, we know that:
@@ -50,7 +56,6 @@ Similarly, if we have a major scale and we are looking for the minor scale simil
 
     A major related to a minor = relative major
     
-    A minor related to a major = relative minor
 
 """)
 
@@ -61,7 +66,7 @@ Similarly, if we have a major scale and we are looking for the minor scale simil
     SECTION 1 - RELATIVE MINOR CONNECTION
 ==========================================
 
-Every minor scale shares the same notes and key signature as its relative major scale. 
+Every minor scale shares the same notes and key signature as its relative major scale.
 But how do we know a minor scale’s relative major?
 
 It is surprisingly easier than you think.
@@ -74,7 +79,7 @@ Without counting, what major scale do you think would be its relative major?
 
 By counting, we’ll find its relative major.
 
-        A → A♯ → B → C 
+        A → A♯ → B → C
 
 We moved three semitones forward, so the relative major of A minor is C major.
 
@@ -88,7 +93,7 @@ Remember what was previously stated: minor scales share the same notes and key s
 
 How? You might ask.
 
-We know C is the relative major of A minor. 
+We know C is the relative major of A minor.
 
 We also know that the notes in C major are:
 
@@ -97,7 +102,7 @@ We also know that the notes in C major are:
 So, what about A minor? We can construct it using a unique pattern.
 Just as the major scales have a unique pattern, minor scales have theirs too.
 
-The natural minor scale formula has five tones and two semitones (like the major scale formula). 
+The natural minor scale formula has five tones and two semitones (like the major scale formula).
 The difference is that the arrangement is different.
 
 Major scale formula:
@@ -110,7 +115,7 @@ Natural minor scale formula:
 
 Five Tones, two semitones, but in different arrangements.
 
-It is called the natural minor scale formula because there are other types of minor scales. 
+It is called the natural minor scale formula because there are other types of minor scales.
 For now, we are only focusing on natural minor scales.
 
 Using the natural minor scale formula, we will construct the A minor scale.
@@ -152,6 +157,48 @@ This is why C major and A minor are called relative scales.
 Just as C major has no accidentals in its key signature, A minor has no accidentals in its key signature.
 
 Because A minor has no accidentals in its key signature, you might not immediately notice the connection between it and its relative major. 
+
+""")
+
+    questions = SECTION_QUESTIONS[1]
+
+    while True:
+        choice = input("\nType 'yes' to take the Section 1 quiz or 'no' to return to the main menu: ").strip().lower()
+        if choice == "yes":
+            break
+        if choice == "no":
+            return
+        print("Kindly input 'yes' or 'no'.")
+
+    while True:
+        print("\n======================================")
+        print("   SECTION 1 QUIZ: RELATIVE MINOR")
+        print("======================================")
+
+        score = 0
+        selected_questions = random.sample(questions, 15)
+
+        for question_number, question in enumerate(selected_questions, 1):
+            if ask_question(question, question_number):
+                score += 1
+
+        print(f"\nYou scored {score}/15")
+
+        if score >= 11:
+            print("Congratulations! You have completed Section 1 of Minor Scales.")
+            return
+
+        print("You need at least 11/15 to complete this section.")
+        while True:
+            retry = input("\nType 'yes' to try Section 1 again or 'no' to return to the main menu: ").strip().lower()
+            if retry == "yes":
+                break
+            if retry == "no":
+                return
+            print("Kindly input 'yes' or 'no'.")
+
+    
+print("""
 
 MINORS WITH ACCIDENTALS
 

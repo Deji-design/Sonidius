@@ -542,7 +542,6 @@ Major third
 Major sixth
 Major seventh
 
-
 Let’s take some examples.
 
 Remember, to make it easier, you can count along the C major scale.
@@ -692,5 +691,6 @@ You are progressing really well. Keep it up!
         print ("Not quite, the answer is Major 2nd")
     else :
         print ("Kindly input a letter")
+   
 
 

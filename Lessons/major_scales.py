@@ -1,11 +1,10 @@
 import random
-from Lessons.major_scales_question_banks import SECTION_QUESTIONS
+from Lessons.major_scale_question_banks import SECTION_QUESTIONS
 
 
 # ==========================================
 # FUNCTION FOR ASKING QUESTIONS
 # ==========================================
-
 
 def ask_question(q, question_number):
 
