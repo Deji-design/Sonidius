@@ -1,3 +1,9 @@
+import random
+
+from Lessons.major_scales import ask_question
+from Lessons.minor_scale_question_banks import SECTION_QUESTIONS
+
+
 def minor_scales():
     print("""
 
@@ -132,3 +138,40 @@ Look at how the scale was made from the formula
 
 
     """)
+
+    questions = SECTION_QUESTIONS[1]
+
+    while True:
+        choice = input("\nType 'yes' to take the Section 1 quiz or 'no' to return to the main menu: ").strip().lower()
+        if choice == "yes":
+            break
+        if choice == "no":
+            return
+        print("Kindly input 'yes' or 'no'.")
+
+    while True:
+        print("\n======================================")
+        print("   SECTION 1 QUIZ: RELATIVE MINOR")
+        print("======================================")
+
+        score = 0
+        selected_questions = random.sample(questions, 15)
+
+        for question_number, question in enumerate(selected_questions, 1):
+            if ask_question(question, question_number):
+                score += 1
+
+        print(f"\nYou scored {score}/15")
+
+        if score >= 11:
+            print("Congratulations! You have completed Section 1 of Minor Scales.")
+            return
+
+        print("You need at least 11/15 to complete this section.")
+        while True:
+            retry = input("\nType 'yes' to try Section 1 again or 'no' to return to the main menu: ").strip().lower()
+            if retry == "yes":
+                break
+            if retry == "no":
+                return
+            print("Kindly input 'yes' or 'no'.")
