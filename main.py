@@ -79,5 +79,6 @@ def main():
 
             print("Please choose a number from the list above.")
 
+if __name__ == "__main__":
 
-main()
+    main()

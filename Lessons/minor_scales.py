@@ -62,9 +62,7 @@ Similarly, if we have a major scale and we are looking for the minor scale simil
 
     print("""
 
-==========================================
     SECTION 1 - RELATIVE MINOR CONNECTION
-==========================================
 
 Every minor scale shares the same notes and key signature as its relative major scale.
 But how do we know a minor scale’s relative major?
