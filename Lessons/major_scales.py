@@ -1,5 +1,5 @@
 import random
-from Lessons.major_scale_question_banks import SECTION_QUESTIONS
+from Lessons.major_scales_question_banks import SECTION_QUESTIONS
 
 
 # ==========================================
