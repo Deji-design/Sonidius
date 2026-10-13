@@ -341,8 +341,7 @@ semitones work, how key signatures work,
 and how the Circle of Fifths connects
 everything together.
 
-There are 15 major key signatures in
-Western music.
+There are 15 major scales in classical music
 
 Let us begin!
 """)
