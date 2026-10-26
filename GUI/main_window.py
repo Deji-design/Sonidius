@@ -1,5 +1,10 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import scrolledtext
+from GUI.major_scales_gui import open_major_scales
+from Lessons.major_scales_question_banks import SECTION_QUESTIONS
+
+
 
 # Creating the main window
 window = tk.Tk()
@@ -39,7 +44,10 @@ welcome.pack(pady=(0,25))
 
 # Temporary action for lesson buttons
 def open_lesson(lesson_name):
-    messagebox.showinfo(
+    if lesson_name == "Major Scales":
+        open_major_scales(window)
+    else:
+        messagebox.showinfo(
         "Coming Soon!",
         f"{lesson_name} will be connected to your lesson code next."
     )
