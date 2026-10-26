@@ -4,8 +4,6 @@ from tkinter import scrolledtext
 from GUI.major_scales_gui import open_major_scales
 from Lessons.major_scales_question_banks import SECTION_QUESTIONS
 
-
-
 # Creating the main window
 window = tk.Tk()
 window.title("Sonidius")
@@ -52,6 +50,79 @@ def open_lesson(lesson_name):
         f"{lesson_name} will be connected to your lesson code next."
     )
 
+# Create the Major Scales Lesson
+def open_major_scales():
+    lesson_window = tk.Toplevel(window)
+    lesson_window.title("Sonidius - Major Scales")
+    lesson_window.geometry("800x600")
+    lesson_window.configure(bg="#FFF8E7")
+
+# Lesson heading
+    heading = tk.Label(
+        lesson_window,
+        text="Major Scales",
+        font=("Arial", 26, "bold"),
+        fg="#6C4AD6",
+        bg="#FFF8E7"
+    )
+    
+    heading.pack(pady=(20, 10))
+
+    # Lesson introduction
+    introduction = tk.Label(
+        lesson_window,
+        text=(
+            """Welcome to the Major Scales Lesson\n\n"""
+            """Here, you would discover the meaning behind """
+            """what every musician calls major scales"""
+            ),
+        font=("Arial", 14),
+        fg="#44405A",
+        bg="#FFF8E7",
+        wraplength=700,
+        justify="center"
+        )
+    
+    introduction.pack(pady=15)
+
+# Placeholder for the lesson notes
+    notes = scrolledtext.ScrolledText(
+        lesson_window,
+        wrap=tk.WORD,
+        font=("Ariel", 12),
+        width=75,
+        height=18,
+        bg="#F7EFDC",
+        fg="#302747"
+    )
+
+    notes.pack(padx=25, pady=10, fill="both", expand=True)
+
+
+    notes.tag_configure("center", justify="center", font=("Arial", 20, "bold"))
+    notes.insert(
+     tk.END,
+        """ MAJOR SCALES """,
+    "center"
+    
+    )
+
+    notes.insert(
+        tk.END,
+        """
+
+Welcome!
+
+Major scales are one of the foundations of music theory. In this lesson, you will learn how major scales are built, how tones and semitones work, how key signatures work, and how the Circle of Fifths connects everything together.
+
+There are 15 major scales in classical music.
+Let us begin!"""
+    )
+    
+    
+    
+    # Prevents editing of notes by external parties
+    notes.configure(state="disabled")
 
 # Lesson information
 lessons = [
